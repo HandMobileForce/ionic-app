@@ -1,0 +1,16 @@
+{
+  "name": "hand-portal-hybrid",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "ionic": "",
+    "ngCordova": "",
+    "jquery": "",
+    "handLib": ""
+  },
+  "devDependencies": {}
+}

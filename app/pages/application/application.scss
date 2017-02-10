@@ -1,0 +1,93 @@
+.application{
+  .banner{
+    width: 100%;
+    height: 200px;
+    img{
+      width: 100%;
+      height: 200px;
+    }
+  }
+  .menu-list{
+    .menu-area {
+      width: 100%;
+      background-image: linear-gradient(0deg, transparent, transparent 50%, #f5f5f5 50%);
+      background-position: top;
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      .menu-header{
+        height: 30px;
+        line-height: 30px;
+        padding-left:20px;
+      }
+      .menu-line {
+        height: 80px;
+        width: 100%;
+        text-align: center;
+        background-image: linear-gradient(90deg, #f5f5f5, #f5f5f5 50%, transparent 50%);
+        background-position: right;
+        background-size: 1px 100%;
+        background-repeat: no-repeat;
+        &.activated {
+          background: #f5f5f5;
+        }
+        .app-item {
+          height: 50px;
+          padding-top: 3px;
+          width: 25%;
+          float: left;
+          .app-item-content {
+            height: 40px;
+            width: 40px;
+            display: inline-block;
+            line-height: 40px;
+            position: relative;
+            background: none;
+            text-align: center;
+            margin-top: 5px;
+            .app-extra {
+              position: absolute;
+              top: -6px;
+              right: -12px;
+              width: 26px;
+              height: 16px;
+              line-height: 12px;
+              padding: 2px;
+              border-radius: 8px;
+              font-size: 10px;
+              background: #f3515b;
+              color: white;
+              text-align: center;
+            }
+            .app-extra-refresh {
+              position: absolute;
+              top: -6px;
+              right: -12px;
+              width: 24px;
+              height: 16px;
+              line-height: 16px;
+              border-radius: 8px;
+              background: #f3515b;
+              text-align: center;
+            }
+            .app-extra-refresh .spinner svg {
+              width: 14px;
+              height: 14px;
+              stroke: white;
+              fill: white;
+            }
+            img {
+              width: 40px;
+              vertical-align: middle;
+            }
+          }
+
+        }
+        .app-text {
+          margin-top: 5px;
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
