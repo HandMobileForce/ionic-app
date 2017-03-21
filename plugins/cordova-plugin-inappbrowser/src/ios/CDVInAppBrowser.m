@@ -47,11 +47,6 @@
     _callbackIdPattern = nil;
 }
 
-- (id)settingForKey:(NSString*)key
-{
-    return [self.commandDelegate.settings objectForKey:[key lowercaseString]];
-}
-
 - (void)onReset
 {
     [self close:nil];
@@ -142,16 +137,8 @@
     }
 
     if (self.inAppBrowserViewController == nil) {
-        NSString* userAgent = [CDVUserAgentUtil originalUserAgent];
-        NSString* overrideUserAgent = [self settingForKey:@"OverrideUserAgent"];
-        NSString* appendUserAgent = [self settingForKey:@"AppendUserAgent"];
-        if(overrideUserAgent){
-            userAgent = overrideUserAgent;
-        }
-        if(appendUserAgent){
-            userAgent = [userAgent stringByAppendingString: appendUserAgent];
-        }
-        self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:userAgent prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
+        NSString* originalUA = [CDVUserAgentUtil originalUserAgent];
+        self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:originalUA prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
         self.inAppBrowserViewController.navigationDelegate = self;
 
         if ([self.viewController conformsToProtocol:@protocol(CDVScreenOrientationDelegate)]) {
@@ -231,7 +218,6 @@
                                    initWithRootViewController:self.inAppBrowserViewController];
     nav.orientationDelegate = self.inAppBrowserViewController;
     nav.navigationBarHidden = YES;
-    nav.modalPresentationStyle = self.inAppBrowserViewController.modalPresentationStyle;
 
     __weak CDVInAppBrowser* weakSelf = self;
 
@@ -239,30 +225,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         if (weakSelf.inAppBrowserViewController != nil) {
             [weakSelf.viewController presentViewController:nav animated:YES completion:nil];
-        }
-    });
-}
-
-- (void)hide:(CDVInvokedUrlCommand*)command
-{
-    if (self.inAppBrowserViewController == nil) {
-        NSLog(@"Tried to hide IAB after it was closed.");
-        return;
-
-
-    }
-    if (_previousStatusBarStyle == -1) {
-        NSLog(@"Tried to hide IAB while already hidden");
-        return;
-    }
-
-    _previousStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
-
-    // Run later to avoid the "took a long time" log message.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.inAppBrowserViewController != nil) {
-            _previousStatusBarStyle = -1;
-            [self.viewController dismissViewControllerAnimated:YES completion:nil];
         }
     });
 }
@@ -286,8 +248,11 @@
 
 - (void)openInSystem:(NSURL*)url
 {
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
-    [[UIApplication sharedApplication] openURL:url];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    } else { // handle any custom schemes to plugins
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:CDVPluginHandleOpenURLNotification object:url]];
+    }
 }
 
 // This is a helper method for the inject{Script|Style}{Code|File} API calls, which

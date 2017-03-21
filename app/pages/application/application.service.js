@@ -30,7 +30,7 @@
             "menuType": "OFFICE",
             "menuName": "工作流",
             "imageUrl": "build/img/application/schedule@3x.png",
-            "destUrl": "plan",
+            "destUrl": "search",
             "hasWorkflowNum": "Y",
             "menuSequence": 2,
             "userPrivileges": "N"

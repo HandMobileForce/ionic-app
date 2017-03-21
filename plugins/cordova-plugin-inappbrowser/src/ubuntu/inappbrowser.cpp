@@ -65,10 +65,6 @@ void Inappbrowser::show(int, int) {
     m_cordova->execQML("CordovaWrapper.global.inappbrowser.visible = true");
 }
 
-void Inappbrowser::hide(int, int) {
-    m_cordova->execQML("CordovaWrapper.global.inappbrowser.visible = false");
-}
-
 void Inappbrowser::close(int, int) {
     m_cordova->execQML("CordovaWrapper.global.inappbrowser.destroy()");
     this->callbackWithoutRemove(_eventCb, EXIT_EVENT);
