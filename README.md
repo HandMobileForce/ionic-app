@@ -1,9 +1,12 @@
+# [Hand Portal] &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+
+
 # 汉得移动门户种子工程项目
 
 这个一个基于Ionic1的移动门户种子工程，还在完善中
 
 
-## 特点!
+## 特点
 **此工程在ionic1的基础上进行改进，使他成为一个强大的门户集成平台.** 
 * 解决了白屏闪屏的问题.
 * 优化了页面切换的性能.
@@ -12,7 +15,7 @@
 * 加入了热更新功能和在线，离线应用功能.
 * 加入动态菜单，菜单权限和菜单管理的功能.
 * 加入标准通讯录功能.
-* 加入工作流的功能.
+* 加入标准工作流的功能.
 * 加入消息中心和即时通讯的功能.
 
 ## 目录
