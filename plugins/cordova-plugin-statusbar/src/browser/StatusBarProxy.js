@@ -25,7 +25,7 @@ function notSupported(win,fail) {
         win();
         // note that while it is not explicitly supported, it does not fail
         // this is really just here to allow developers to test their code in the browser
-        // and if we fail, then their app might as well. -jm
+        // and if we fail, then their src might as well. -jm
     },0);
 }
 

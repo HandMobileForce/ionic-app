@@ -1,0 +1,60 @@
+<div class="HmsTable">
+  <div class="row table-header animated">
+    <div class="col col-25" style="z-index: 2;margin-top: 0px;">
+      <table class="left">
+        <tr class="table-header-tr">
+          <td style="width: 30%">#</td>
+          <td style="width: 70%">{{hmsColumnName}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col col-75" style="z-index: 1">
+      <ion-scroll delegate-handle="hmsTableHeader" has-bouncing="false" direction="x" scrollbar-x="false"
+                  style="margin-top: 0;margin-left: -1px;overflow-x: hidden;">
+        <table class="right">
+          <tr class="table-header-tr">
+            <td ng-repeat="item in hmsHeadData">
+              <div class="column-default-width column-{{$index}}">
+                {{item.headItem}}
+              </div>
+            </td>
+          </tr>
+        </table>
+      </ion-scroll>
+    </div>
+  </div>
+
+  <div class="row table-body animated">
+    <ion-scroll direction="y" scrollbar-y="false" style="height: 100%;width: 100%">
+      <div class="row">
+        <div class="col col-25" style="z-index: 1;margin-top: 0px;">
+          <table class="left">
+            <tr ng-class="{true:'tr-odd-bgcolor',false:'tr-even-bgcolor'}[$index%2==0]"
+                ng-repeat="item in hmsBodyData">
+              <td style="width: 30%;background-color: rgba(236,233,216,1)">{{$index+1}}</td>
+              <td style="width: 70%;background-color: rgba(236,233,216,.5)">
+                {{item.name}}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col col-75" style="z-index: 0">
+          <ion-scroll delegate-handle="hmsTableBody" has-bouncing="false" direction="x" scrollbar-x="false"
+                      on-scroll="scroll()" style="margin-top: 0;margin-left: -1px;">
+            <table class="right">
+              <tr ng-class="{true:'tr-odd-bgcolor',false:'tr-even-bgcolor'}[$index%2==0]"
+                  ng-repeat="item in hmsBodyData">
+                <td ng-repeat="item in item.bodyItem">
+                  <div class="text-overflow-ellipsis column-default-width column-{{$index}} num"
+                       ng-click="hmsResetWidth($index,item.bodyValue)">
+                    {{item.bodyValue}}
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </ion-scroll>
+        </div>
+      </div>
+    </ion-scroll>
+  </div>
+</div>

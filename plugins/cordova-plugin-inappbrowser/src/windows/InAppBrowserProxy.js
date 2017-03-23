@@ -180,20 +180,20 @@ var IAB = {
                     popup.style.height = "calc(100% - 70px)";
 
                     navigationButtonsDiv = document.createElement("div");
-                    navigationButtonsDiv.className = "inappbrowser-app-bar";
+                    navigationButtonsDiv.className = "inappbrowser-src-bar";
                     navigationButtonsDiv.onclick = function (e) {
                         e.cancelBubble = true;
                     };
 
                     navigationButtonsDivInner = document.createElement("div");
-                    navigationButtonsDivInner.className = "inappbrowser-app-bar-inner";
+                    navigationButtonsDivInner.className = "inappbrowser-src-bar-inner";
                     navigationButtonsDivInner.onclick = function (e) {
                         e.cancelBubble = true;
                     };
 
                     backButton = document.createElement("div");
                     backButton.innerText = "back";
-                    backButton.className = "app-bar-action action-back";
+                    backButton.className = "src-bar-action action-back";
                     backButton.addEventListener("click", function (e) {
                         if (popup.canGoBack)
                             popup.goBack();
@@ -201,7 +201,7 @@ var IAB = {
 
                     forwardButton = document.createElement("div");
                     forwardButton.innerText = "forward";
-                    forwardButton.className = "app-bar-action action-forward";
+                    forwardButton.className = "src-bar-action action-forward";
                     forwardButton.addEventListener("click", function (e) {
                         if (popup.canGoForward)
                             popup.goForward();
@@ -209,7 +209,7 @@ var IAB = {
 
                     closeButton = document.createElement("div");
                     closeButton.innerText = "close";
-                    closeButton.className = "app-bar-action action-close";
+                    closeButton.className = "src-bar-action action-close";
                     closeButton.addEventListener("click", function (e) {
                         setTimeout(function () {
                             IAB.close(navigationEventsCallback);

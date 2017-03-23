@@ -35,7 +35,6 @@
 * JavaScript依赖包引入 `bower install`.
 * 构建运行环境 `gulp run-dev`.
 * 监听 `gulp watch`.
-* 监听 `gulp watch`.
 
 **Note:** Is your build slow? Update `npm` to 3.x: `npm install -g npm`.
 

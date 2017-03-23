@@ -1,0 +1,34 @@
+<ion-view view-title="应用" class="application" ng-controller="applicationCtrl as vm">
+  <ion-header-bar align-title="center" class="bar-stable">
+    <h1 class="title">
+      <span>应用</span>
+    </h1>
+    <div class="buttons">
+      <button class="button button-clear">
+        <span class="barRightButton">设置</span>
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="banner">
+      <img src="build/assets/img/application/banner@3x.png">
+    </div>
+    <div class="menu-list">
+      <div class="menu-area" ng-repeat="cateory in vm.menuList.menuCateories">
+        <div class="menu-header" ng-bind="cateory.cateoryName">
+        </div>
+        <div class="menu-line" ng-repeat="line in cateory.menuLine">
+          <div class="app-item" ng-repeat="item in line.list" ng-click="vm.goPage(item)">
+            <div class="app-item-content">
+              <div class="app-extra" ng-if="item.hasWorkflowNum"
+                   ng-bind="4">
+              </div>
+              <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon!=''"/>
+            </div>
+            <div class="app-text">{{item.menuName}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

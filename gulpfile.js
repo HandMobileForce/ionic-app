@@ -5,7 +5,6 @@
  */
 
 var gulp = require('gulp');
-
 //Include Plugins
 var del = require('del');
 var jshint = require('gulp-jshint');
@@ -28,54 +27,54 @@ var server = tinylr();
 var port = 8000;
 
 var jsFilePath = [
-  'app/scripts/*.js',
-  'app/scripts/*/*.js',
-  'app/app.js',
-  'app/pages/**/*.js',
-  'app/pages/**/**/*.js',
-  'app/pages/**/**/**/*.js'];
+  'src/scripts/*.js',
+  'src/scripts/*/*.js',
+  'src/app.js',
+  'src/pages/**/*.js',
+  'src/pages/**/**/*.js',
+  'src/pages/**/**/**/*.js'];
 
 var cssFilePath = [
-  'app/theme/app.core.scss',
-  'app/pages/**/*.scss',
-  'app/pages/**/**/*.scss',
-  'app/pages/**/**/**/*.scss'];
+  'src/theme/src.core.scss',
+  'src/pages/**/*.scss',
+  'src/pages/**/**/*.scss',
+  'src/pages/**/**/**/*.scss'];
 
 var htmlFilePath = [
-  'app/pages/**/*.html',
-  'app/pages/**/**/*.html',
-  'app/pages/**/**/**/*.html',
-  'app/pages/**/**/**/**/*.html'];
+  'src/pages/**/*.html',
+  'src/pages/**/**/*.html',
+  'src/pages/**/**/**/*.html',
+  'src/pages/**/**/**/**/*.html'];
 
 var libDevFilePath = [
-  'app/lib/**/*.*',
-  'app/lib/**/**/*.*',
-  'app/lib/**/**/**/*.*'];
+  'src/lib/**/*.*',
+  'src/lib/**/**/*.*',
+  'src/lib/**/**/**/*.*'];
 
 var libDevCommonFilePath = [
-  'app/common/**/*.*',
-  'app/common/**/**/*.*',
-  'app/common/**/**/**/*.*'
+  'src/common/**/*.*',
+  'src/common/**/**/*.*',
+  'src/common/**/**/**/*.*'
 ];
 
 var libPublishFilePath = [
-  'app/lib/**/css/ionic.min.css',
-  'app/lib/**/fonts/*.*',
-  'app/lib/**/js/ionic.bundle.js',
-  'app/lib/**/rollups/md5.js',
-  'app/lib/**/dist/jquery.min.js',
-  'app/lib/**/dist/ng-cordova.js',
-  'app/lib/**/angular-translate.js',
-  'app/lib/**/angular-translate-loader-static-files.js',
-  'app/lib/**/dist/ionic-datepicker.bundle.min.js',
-  'app/lib/**/dist/pouchdb.min.js'
+  'src/lib/**/css/ionic.min.css',
+  'src/lib/**/fonts/*.*',
+  'src/lib/**/js/ionic.bundle.js',
+  'src/lib/**/rollups/md5.js',
+  'src/lib/**/dist/jquery.min.js',
+  'src/lib/**/dist/ng-cordova.js',
+  'src/lib/**/angular-translate.js',
+  'src/lib/**/angular-translate-loader-static-files.js',
+  'src/lib/**/dist/ionic-datepicker.bundle.min.js',
+  'src/lib/**/dist/pouchdb.min.js'
 ];
 
 var imgFilePath = [
-  'app/img/**/*.png',
-  'app/img/**/**/*.*',
-  'app/img/**/**/**/*.png',
-  'app/img/*.gif'];
+  'src/assets/img/**/*.png',
+  'src/assets/img/**/**/*.*',
+  'src/assets/img/**/**/**/*.png',
+  'src/assets/img/*.gif'];
 
 var configDEVPath = [
   'publish/TEST/config.xml'];
@@ -104,16 +103,16 @@ var pluginPRODPath = [
 
 //清除自动生成的目录文件
 gulp.task('clean', function () {
-  return gulp.src(['www/build/*', 'app/scripts/baseConfig.js', 'config.xml'
+  return gulp.src(['www/build/*', 'src/scripts/baseConfig.js', 'config.xml'
     /*,'plugins/com.handmobile.cordovaplugin.hotpatch/*', 'plugins/hand-im-plugin-device/*'*/]).pipe(clean());
 });
 
 gulp.task('clean-code', function () {
-  return gulp.src(['www/build/css/*', 'www/build/img/*', 'www/build/pages/*', 'www/build/app.bundle.js']).pipe(clean());
+  return gulp.src(['www/build/css/*', 'www/build/img/*', 'www/build/pages/*', 'www/build/src.bundle.js']).pipe(clean());
 });
 
 gulp.task('clean-bundle-js', function () {
-  return gulp.src(['www/build/app.bundle.js']).pipe(clean());
+  return gulp.src(['www/build/src.bundle.js']).pipe(clean());
 });
 
 
@@ -177,13 +176,12 @@ gulp.task('copy-publish-libs', function () {
 //复制图片文件
 gulp.task('copy-img', function () {
   return gulp.src(imgFilePath)
-    .pipe(gulp.dest('www/build/img'));
+    .pipe(gulp.dest('www/build/assets/img'));
 });
 
 //复制开发环境 config.xml
 gulp.task('copy-dev-config', function () {
-  return gulp.src(configDEVPath)
-    .pipe(gulp.dest(''));
+  //return gulp.src(configDEVPath).pipe(gulp.dest(''));
 });
 
 //复制发布环境 config.xml
@@ -229,7 +227,7 @@ gulp.task('copy-publish-lib', function (callback) {
 
 //合并压缩css文件
 gulp.task('sass', function () {
-  return gulp.src(['app/theme/*.scss'])
+  return gulp.src(['src/theme/*.scss'])
     .pipe(sass())
     .pipe(gulp.dest('www/build/css'));
 });
@@ -237,40 +235,39 @@ gulp.task('sass', function () {
 
 //生成开发环境环境配置文件
 gulp.task('config-dev', function () {
-  gulp.src('app/config/devConfig.json')
+  gulp.src('src/config/devConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
-    .pipe(gulp.dest('app/scripts'))
+    .pipe(gulp.dest('src/scripts'))
 });
 
 //生成发布环境环境配置文件
 gulp.task('config-prod', function () {
-  gulp.src('app/config/prodConfig.json')
+  gulp.src('src/config/prodConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
-    .pipe(gulp.dest('app/scripts'))
+    .pipe(gulp.dest('src/scripts'))
 });
 
 //生成iOS商店发布环境环境配置文件
 gulp.task('config-ios-appStore-prod', function () {
-  gulp.src('app/config/iOSAppStoreConfig.json')
+  gulp.src('src/config/iOSAppStoreConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
-    .pipe(gulp.dest('app/scripts'))
+    .pipe(gulp.dest('src/scripts'))
 });
 
 //生成iOS发布环境环境配置文件
 gulp.task('config-prod', function () {
-  gulp.src('app/config/prodConfig.json')
+  gulp.src('src/config/prodConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
-    .pipe(gulp.dest('app/scripts'))
+    .pipe(gulp.dest('src/scripts'))
 });
 
 //复制开发环境 config.xml
 gulp.task('copy-iosAppStore-config', function () {
-  return gulp.src(configIosAppStorePath)
-    .pipe(gulp.dest(''));
+  //return gulp.src(configIosAppStorePath).pipe(gulp.dest(''));
 });
 
 //压缩css
@@ -349,7 +346,7 @@ function copyfile(oldPath, newPath) {
 
 function copyPages(e) {
   var oldPath = e.path;
-  var newPath = oldPath.replace('/app/', '/www/build/');
+  var newPath = oldPath.replace('/src/', '/www/build/');
   var newDirPathTemp = newPath.split("/");
   var currentPath = fs.realpathSync('.');
   var newDirPath = [];
@@ -397,7 +394,7 @@ gulp.task('watch', function () {
       copyPages(e);
     });
 
-    gulp.watch('app/img/**/**/**/**', function (e) {
+    gulp.watch('src/img/**/**/**/**', function (e) {
       console.log('有变动的文件为 oldPath ' + e.path);
       copyPages(e);
     });

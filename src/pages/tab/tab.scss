@@ -1,0 +1,88 @@
+
+.bar{
+  &.bar-stable{
+    border-color: #e8e8e8;
+    background-color: white;
+    background-image: linear-gradient(0deg,#dedede,#dedede 50%,transparent 50%);
+    //color: #1F8CEB;
+    //background: white;//#48ACF8;
+
+    .title,.button-clear,.button{
+      color: #2d2d2d;
+    }
+  }
+}
+
+
+.hms-tab{
+  .hms-tab-page{
+    .has-footer {
+      bottom: 50px;
+    }
+  }
+
+  .hms-tab-bar{
+    padding: 0;
+    height: 50px;
+    .hms-tab-item{
+      width: 25%;
+      float: left;
+
+      &.activated{
+        .hms-tab-application-off{
+          background-image: url("../assets/img/tab/center@3x.png");
+        }
+        .hms-tab-message-off{
+          background-image: url("../assets/img/tab/message@3x.png");
+        }
+        .hms-tab-contact-off{
+          background-image: url("../assets/img/tab/contact@3x.png");
+        }
+        .hms-tab-mine-off{
+          background-image: url("../assets/img/tab/mine@3x.png");
+        }
+      }
+
+      .hms-tab-icon{
+        margin-top: 5px;
+        width: 25px;
+        height: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .hms-tab-name{
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .hms-tab-application-on{
+        background-image: url("../assets/img/tab/center@3x.png");
+      }
+      .hms-tab-application-off{
+        background-image: url("../assets/img/tab/center-outline@3x.png");
+      }
+      .hms-tab-message-on{
+        background-image: url("../assets/img/tab/message@3x.png");
+      }
+      .hms-tab-message-off{
+        background-image: url("../assets/img/tab/message-outline@3x.png");
+      }
+      .hms-tab-contact-on{
+        background-image: url("../assets/img/tab/contact@3x.png");
+      }
+      .hms-tab-contact-off{
+        background-image: url("../assets/img/tab/contact-outline@3x.png");
+      }
+      .hms-tab-mine-on{
+        background-image: url("../assets/img/tab/mine@3x.png");
+      }
+      .hms-tab-mine-off{
+        background-image: url("../assets/img/tab/mine-outline@3x.png");
+      }
+    }
+  }
+}

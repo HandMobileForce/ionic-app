@@ -1,0 +1,491 @@
+.login{
+  background: url("../assets/img/login/login-back.png");
+  background-size: 100% 100%;
+  animation:backgroundTransition 4s linear;
+  -webkit-animation: backgroundTransition 4s linear;
+  .content-style{
+    background-color: transparent;
+  }
+  .hasPassword{
+    width: 45%;
+    height:45px;
+    background: #1F8CEB;
+    border-radius: 50px;
+    color: #fff;
+    margin-left: 27.5%;
+    /* font-weight: 400; */
+    line-height: 45px;
+    text-align: center;
+  }
+  .noPassword{
+    width: 45%;
+    height:45px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    color:rgba(255, 255, 255, 0.8);
+    margin-left: 27.5%;
+    /* font-weight: 400; */
+    line-height: 45px;
+    text-align: center;
+  }
+  .login-item{
+    padding: 0px;
+    border: none;
+    width: 90%;
+    margin-left: 5%;
+    height: 250px;
+    /* margin-top: 6%; */
+    background: none;
+    margin-top: 25px;
+  }
+  .username-input input::-webkit-input-placeholder {
+    color:  rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  }
+  .username-input{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    background-color: transparent;
+    width:82.6%;
+    margin-left:18.7%;
+    height: 32px;
+    padding-bottom: 3px;
+    border: none;
+    margin-top: 74px;
+    z-index: 100;
+  }
+  .login_user_img{
+    position: absolute;
+    left: 9%;
+    top: 78px;
+    img{
+      width:18px;
+    }
+  }
+  .login_pwd_img{
+    position: absolute;
+    left: 9%;
+    top: 152px;
+    img{
+      width:18px;
+    }
+  }
+  .hand_logo{
+    img{
+      width: 50%;
+      height: 45px;
+      margin-left: 25%;
+      margin-top: 102px;
+    }
+  }
+  .password-input{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    letter-spacing: -1px;
+    background-color: transparent;
+    width: 82.6%;
+    margin-left: 18.7%;
+    height: 31px;
+    border: none;
+    margin-top: 41px;
+    z-index: 100;
+  }
+  input::-webkit-input-placeholder {
+    color:  rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  }
+  .login-checkbox-item{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 30px;
+    width: 82.6%;
+    margin-left: 8.7%;
+    margin-top: 5px;
+  }
+
+  .login-checkbox-icon{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 12.5px;
+    right: 62px;
+  }
+
+  .big-portrait{
+    margin:auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  .big-portrait.ng-hide-remove{
+    -webkit-animation: zoomIn 0.3s;
+    animation: zoomIn .3s;
+  }
+  .little-portrait{
+    margin:auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  .little-portrait.ng-hide-remove{
+    -webkit-animation: zoomIn 0.3s;
+    animation: zoomIn .3s;
+  }
+  .flying-username-item-focus{
+    transition: all 0.15s ease-in 0s;
+    -webkit-transition: all 0.15s ease-in 0s;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    width: 54px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 30px;
+    margin-left: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .flying-username-item-blur{
+    transition: all 0.15s ease-in 0s;
+    -webkit-transition: all 0.15s ease-in 0s;
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    width: 54px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 30px;
+    margin-left: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .flying-password-item-focus{
+    transition: all 0.15s ease-in 0s;
+    -webkit-transition: all 0.15s ease-in 0s;
+    position: absolute;
+    left: 0px;
+    top: 128px;
+    width: 54px;
+    height: 23px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 30px;
+    margin-left: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .flying-password-item-blur{
+    transition: all 0.15s ease-in 0s;
+    -webkit-transition: all 0.15s ease-in 0s;
+    position: absolute;
+    left: 0px;
+    top: 113px;
+    width: 54px;
+    height: 23px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 30px;
+    margin-left: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .focus-user-label{
+    transition: transform 0.15s ease-in 0s;
+    -webkit-transition: transform 0.15s ease-in 0s;
+    transform:translate3d(0px,10px,0px);
+    -webkit-transform:translate3d(0px,10px,0px);
+    font-size: 1rem;
+    position: absolute;
+    width: 54px;
+    height: 25px;
+    text-align: left;
+    left: 0px;
+    top: 70px;
+    margin-left: 8.7%;
+    color: #4a4a4a;
+    z-index: -10;
+  }
+  .blur-user-label{
+    transition: transform 0.15s ease-in 0s;
+    -webkit-transition: transform 0.15s ease-in 0s;
+    transform:translate3d(0px,-10px,0px);
+    -webkit-transform:translate3d(0px,-10px,0px);
+    font-size: 0.975rem;
+    position: absolute;
+    width: 54px;
+    height: 25px;
+    text-align: left;
+    left: 0px;
+    top: 70px;
+    margin-left: 8.7%;
+    color: #9b9b9b;
+  }
+  .focus-password-label{
+    transition: transform 0.15s ease-in 0s;
+    -webkit-transition: transform 0.15s ease-in 0s;
+    transform:translate3d(0px,8px,0px);
+    -webkit-transform:translate3d(0px,8px,0px);
+    font-size: 1rem;
+    position: absolute;
+    width: 54px;
+    height: 25px;
+    text-align: left;
+    left: 0px;
+    top: 121px;
+    margin-left: 8.7%;
+    color: #4a4a4a;
+    z-index: -10;
+  }
+  .blur-password-label{
+    transition: transform 0.15s ease-in 0s;
+    -webkit-transition: transform 0.15s ease-in 0s;
+    transform:translate3d(0px,-7px,0px);
+    -webkit-transform:translate3d(0px,-7px,0px);
+    font-size: 0.975rem;
+    position: absolute;
+    width: 54px;
+    height: 25px;
+    text-align: left;
+    left: 0px;
+    top: 121px;//128
+    margin-left: 8.7%;
+    color: #9b9b9b;
+  }
+  .remember-password-button{
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    min-height: 20px;
+    line-height: 20px;
+    width: 62px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    padding-left: 6px;
+    font-size: 0.875rem;
+  }
+  .remember-password-unchecked{
+    color: #9b9b9b;
+  }
+  .remember-password-checked{
+    color: #24559c;
+  }
+  .user-clear-item{
+    transition: all 0.2s ease-in 0s;
+    -webkit-transition: all 0.2s ease-in 0s;
+    opacity: 1;
+    position: absolute;
+    top:75px;
+    right:0px;
+    height: 34px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    margin-right: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .user-clear-item.ng-hide-remove{
+    opacity: 0;
+  }
+  .password-clear-item{
+    transition: all 0.2s ease-in 0s;
+    -webkit-transition: all 0.2s ease-in 0s;
+    opacity: 1;
+    position: absolute;
+    top:149px;
+    right:0px;
+    height: 34px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    margin-right: 8.7%;
+    background-color: transparent;
+    line-height: normal;
+  }
+  .password-clear-item.ng-hide-remove{
+    opacity: 0;
+  }
+  .clear-button{
+    min-height: 34px;
+    line-height: 34px;
+    height:34px;
+    max-width: 40px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+  }
+  .clear-image{
+    width: 24px;
+    height: 34px;
+    padding-left: 12px;
+    padding-top: 7px;
+    padding-bottom: 15px;
+  }
+
+  .login-button{
+    padding: 0px;
+    margin: 0px;
+    width: 67%;
+    min-height: 50px;
+    line-height: 50px;
+    margin-left: 16.5%;
+    margin-top: 34px;
+    border-radius: 20px;
+  }
+  .gray-button{
+    opacity: 1;
+    background-color: #ffffff;
+    color: #9b9b9b;
+    font-size: 1rem;
+    border: 1px solid #9b9b9b;
+  }
+  .blue-button{
+    opacity: 1;
+    background-color: #ffffff;
+    color: #24559c;
+    font-size: 1rem;
+    border: 1px solid #24559c;
+  }
+  .finish-button{
+    background-color: #24559c;
+    font-size: 1rem;
+    color: #ffffff;
+    border: 1px solid #24559c;
+  }
+  .button-icon{
+    transition: all 0.1s ease-in 0s;
+    -webkit-transition: all 0.1s ease-in 0s;
+    position: relative;
+    top: 3px;
+    width: 21px;
+    height:16px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  .button-icon.ng-hide-remove{
+    opacity: 0;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+  }
+  .gray-line{
+    transition: all 0.1s ease-in 0s;
+    -webkit-transition: all 0.1s ease-in 0s;
+    transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    width: 82.6%;
+    height: 1px;
+    margin-left: 8.7%;
+    background-color: #fff;
+    opacity: 1;
+  }
+  .blue-line{
+    transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+    opacity: 1;
+    transform: scale(1.03,1.05);
+    -webkit-transform: scale(1.03,1.05);
+    width: 82.6%;
+    height: 2px;
+    margin-left: 8.7%;
+    background-color: #24559c;
+    opacity: 1;
+  }
+  .blue-line.CLASS-add{
+    opacity: 0;
+  }
+  .gray-line.CLASS-add{
+    opacity: 0;
+  }
+  #real-button,#false-button.button.activated{
+    opacity: 1;
+    transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+  }
+  .wechat-row{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    margin-top: 30px;
+  }
+  .wechat-left-col{
+    padding: 0px;
+    margin: 0px;
+    text-align: right;
+  }
+  .wechat-right-col{
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+  }
+  .wechat-left-line{
+    height: 1px;
+    width: 88%;
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+  .wechat-right-line{
+    height: 1px;
+    width: 88%;
+    background-color: #ffffff;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+  .wechat-center-line{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  .wechat-button{
+    min-height: 60px;
+    line-height: 60px;
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wechat-image{
+    width: 40px;
+    height: 40px;
+  }
+}
+@keyframes backgroundTransition{
+  from{
+    background-size: 110% 110%;
+  }
+  to{
+    background-size: 100% 100%;
+  }
+}
+@-webkit-keyframes backgroundTransition{
+  from{
+    background-size: 110% 110%;
+  }
+  to{
+    background-size: 100% 100%;
+  }
+}
