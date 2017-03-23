@@ -1,0 +1,33 @@
+{
+  "baseConfig": {
+    "debug": false,
+    "isMobilePlatform": true,
+    "clearTable": true,
+    "nativeScreenFlag":true,
+    "appStoreFlag": false,
+    "isWeixinWebview": false,
+    "basePath": "https://mobile-app.hand-china.com/hmap/r/api?sysName=CRM&apiName=",
+    "wxLoginPath": "https://mobile-app.hand-china.com/hmap/oauth/token?client_id=wx_client&client_secret=secret&grant_type=password&",
+    "loginPath": "https://mobile-app.hand-china.com/hmap/oauth/token?client_id=d66ff5b1-6f50-4bb1-b4d3-6971b97775b7&client_secret=780ea799-79b8-4597-a973-85de55c478d3&grant_type=password&",
+    "businessPath": "https://mobile-app.hand-china.com/hmap/api/l",
+    "queryPath": "https://mobile-app.hand-china.com/hmap/i/api",
+    "imPath": "https://mobile-app.hand-china.com/hmap",
+    "pluginBusinessPath": "https://mobile-app.hand-china.com",
+    "tengxuntuyouServer": "https://api.youtu.qq.com/youtu/api/detectface",
+    "pkgIdentifier": "",
+    "appEnvironment": "PROD",
+    "expUploadUrl":"https://app.hand-china.com/hrms/hand_app_fileupload.svc",
+    "dbName":"makeNote.db",
+    "dbLocation":0,
+    "appRootPath":"",
+    "serverPath":"https://10.211.96.173:8080/bts",
+    "appRootFile": "helloCordova",
+    "appUpId":"com.hand-china.hrms",
+    "version":{
+      "currentVersion": "2.5.0",
+      "currentversionName": "此版本为正式版本2.5.0",
+      "currentSubVersion": "1",
+      "currentSubVersionName": "资源增量包1"
+    }
+  }
+}

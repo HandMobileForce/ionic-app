@@ -1,0 +1,18 @@
+{
+  "baseConfig": {
+    "debug": false,
+    "nativeScreenFlag": true,
+    "appStoreFlag": false,
+    "isWxWebView": false,
+    "appID": "a765ff3f-8d33-49b4-a9c9-48e991544242",
+    "appSecret": "ec2a9a5d-8b21-40fb-b20b-fa846b944e7b",
+    "loginPath": "http://wechat.hand-china.com/hmapshowcase/oauth/token?grant_type=password&",
+    "interfacePath": "http://wechat.hand-china.com/hmapshowcase/",
+    "version": {
+      "currentVersion": "0.0.1",
+      "currentversionName": "此版本为测试版本0.0.1",
+      "currentSubVersion": "1",
+      "currentSubVersionName": "资源增量包1"
+    }
+  }
+}

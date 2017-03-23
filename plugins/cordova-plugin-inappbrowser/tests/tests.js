@@ -312,7 +312,7 @@ exports.defineManualTests = function (contentEl, createActionButton) {
         '<div id="info">' +
         'Make sure http://cordova.apache.org and http://google.co.uk and https://www.google.co.uk are white listed. </br>' +
         'Make sure http://www.apple.com is not in the white list.</br>' +
-        'In iOS, starred <span style="vertical-align:super">*</span> tests will put the app in a state with no way to return. </br>' +
+        'In iOS, starred <span style="vertical-align:super">*</span> tests will put the src in a state with no way to return. </br>' +
         '<h4>User-Agent: <span id="user-agent"> </span></hr>' +
         '</div>';
 

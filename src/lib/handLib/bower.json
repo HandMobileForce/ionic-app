@@ -1,0 +1,17 @@
+{
+  "name": "handLib",
+  "homepage": "https://github.com/HandMobileForce/handLib",
+  "authors": [
+    "qi.he <qi.he@hand-china.com>"
+  ],
+  "description": "hand指令库",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,23 @@
+<ion-view class="navigateHrms">
+  <ion-content has-bouncing="false" scrollbar-y="false">
+    <button class="skip-button" ng-click="skipGuide()">
+      跳过
+    </button>
+    <ion-slide-box scrollHeightImg ng-style="actualHeight" on-slide-changed="slideChanged(index)" style="background: #368FC2">
+      <ion-slide>
+        <img src="build/assets/img/1@3x.png" class="slider-item">
+      </ion-slide>
+      <ion-slide>
+        <img src="build/assets/img/2@3x.png" class="slider-item">
+      </ion-slide>
+      <ion-slide>
+        <img src="build/assets/img/3@3x.png" class="slider-item">
+      </ion-slide>
+      <ion-slide>
+        <img src="build/assets/img/4@3x.png" class="slider-item">
+        <button class="slider-button" ng-click="toLogin()">
+        </button>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

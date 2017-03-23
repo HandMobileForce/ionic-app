@@ -45,7 +45,7 @@ function getModelName () {
 function getUUID () {
     var uuid = "";
     try {
-        //Must surround by try catch because this will throw if the app is missing permissions
+        //Must surround by try catch because this will throw if the src is missing permissions
         uuid = window.qnx.webplatform.device.devicePin;
     } catch (e) {
         //DO Nothing
