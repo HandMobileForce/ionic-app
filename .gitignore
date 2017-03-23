@@ -6,8 +6,10 @@ node_modules/
 /plugins/ios.json
 /plugins/android.json
 app/lib/
+src/lib/
 .DS_Store
 .idea
 www/build/
 /config.xml
 app/scripts/baseConfig.js
+src/scripts/baseConfig.js
