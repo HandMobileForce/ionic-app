@@ -70,7 +70,7 @@
 
       console.log('window.localStorage.userToken ' + window.localStorage.userToken)
       if (window.localStorage.userToken && window.localStorage.userToken != "") {
-        $state.go("tab.message");
+        $state.go("tab");
       } else {
         $state.go("login");
       }

@@ -39,7 +39,7 @@
         StatusBar.styleDefault();
       }
     });
-    
+
     /////////////////////////////////////
     $timeout(function () {
       $scope.loginScroll = $ionicScrollDelegate.$getByHandle('loginScroll');
@@ -400,12 +400,12 @@
               $scope.showButtonIcon = false;
               if (response.returnCode == 'S')
                 window.localStorage.crm = response.message == 'Y';
-              $state.go("tab.message");
+              $state.go("tab");
             }).error(function (response, status) {
               $scope.showLoginButton = false;
               $scope.showButtonIcon = false;
               window.localStorage.crm = false;
-              $state.go("tab.message");
+              $state.go("tab");
             });
 
           } else {

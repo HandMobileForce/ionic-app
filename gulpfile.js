@@ -20,6 +20,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var clean = require('gulp-clean');
 var notify = require('gulp-notify');//提示信息
 var gulpNgConfig = require('gulp-ng-config');//提示信息
+var ngAnnotate = require('gulp-ng-annotate');
 var tinylr = require('tiny-lr');
 var fs = require('fs');
 var path = require('path');
@@ -286,6 +287,7 @@ gulp.task('css', function () {
 //合并压缩丑化Js
 gulp.task('scripts', function () {
   return gulp.src(jsFilePath)
+    .pipe(ngAnnotate())
     .pipe(concat('app.bundle.js'))
     .pipe(gulp.dest('www/build')) // write source file for debug
     .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名

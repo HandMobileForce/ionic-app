@@ -88,15 +88,6 @@
         controllerAs: 'vm'
       })
       // Each tab has its own nav history stack:
-      .state('tab.message', {
-        url: '/message',
-        views: {
-          'tab-message': {
-            templateUrl: 'build/pages/message/message.html',
-            controller: ''
-          }
-        }
-      })
       .state('tab.application', {
         url: '/application',
         views: {

@@ -1,0 +1,86 @@
+.message {
+  .header-title {
+    display: flex;
+    position: relative;
+    .searchDiv {
+      flex: 1;
+      display: flex;
+      img {
+        width: 0.7rem;
+        position: absolute;
+        top: 0.75rem;
+        left: 1.3rem;
+      }
+      input {
+        width: 100%;
+        margin: 0.35rem 0 0.35rem 0.75rem;
+        padding-left: 1.4rem;
+        height: 1.2rem;
+        background: #FAFAFA;
+        border: 0.05rem solid #E9E9E9;
+        border-radius: 2rem;
+      }
+    }
+    .buttons {
+      padding: 0 0.75rem;
+      img {
+        margin-top: 0.65rem;
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+  }
+  .list {
+    margin-top: -0.1rem;
+    .list-item {
+      display: flex;
+      padding-top: 0.8rem;
+      height: 3.8rem;
+      border-bottom: 0.05rem solid #E9E9E9;
+
+      img {
+        margin: 0 0.75rem;
+        width: 2.25rem;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 2.25rem;
+      }
+
+      .content {
+        flex: 1;
+        overflow: hidden;
+        div {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        div:first-of-type {
+          font-size: 0.75rem;
+          color: #4A4A4A;
+          padding-bottom: 0.2rem;
+        }
+        div:last-of-type {
+          font-size: 0.65rem;
+          color: #9B9B9B;
+        }
+      }
+      .flag {
+        min-width: 2.2rem;
+        margin: 0 0.75rem;
+        div:first-of-type {
+          font-size: 0.6rem;
+          color: #9B9B9B;
+          padding-bottom: 0.2rem;
+        }
+        div:last-of-type {
+          text-align: center;
+          min-width: 2.25rem;
+          height: 1rem;
+          border-radius: 15px;
+          color: white;
+          background: #F96F68;
+        }
+      }
+    }
+  }
+}
