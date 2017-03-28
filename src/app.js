@@ -127,7 +127,7 @@
       console.log('window.localStorage.userToken ' + window.localStorage.userToken);
 
       if (window.localStorage.userToken && window.localStorage.userToken != "") {
-        $urlRouterProvider.otherwise('/tab/message');
+        $urlRouterProvider.otherwise('/tab');
         /*if (window.localStorage.getItem('gesturePassword') && window.localStorage.getItem('gesturePassword') != '') {
          $urlRouterProvider.otherwise('/gesture-lock');
          } else {

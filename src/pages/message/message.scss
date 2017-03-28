@@ -3,6 +3,7 @@
     display: flex;
     position: relative;
     .searchDiv {
+      position: relative;
       flex: 1;
       display: flex;
       img {
@@ -16,6 +17,7 @@
         margin: 0.35rem 0 0.35rem 0.75rem;
         padding-left: 1.4rem;
         height: 1.2rem;
+        line-height: 1.2rem;
         background: #FAFAFA;
         border: 0.05rem solid #E9E9E9;
         border-radius: 2rem;
