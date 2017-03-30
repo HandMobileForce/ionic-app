@@ -11,3 +11,4 @@ src/lib/
 www/build/
 /config.xml
 src/scripts/baseConfig.js
+/config

@@ -182,7 +182,7 @@ gulp.task('copy-img', function () {
 
 //复制开发环境 config.xml
 gulp.task('copy-dev-config', function () {
-  //return gulp.src(configDEVPath).pipe(gulp.dest(''));
+  return gulp.src(configDEVPath).pipe(gulp.dest(''));
 });
 
 //复制发布环境 config.xml
@@ -236,6 +236,9 @@ gulp.task('sass', function () {
 
 //生成开发环境环境配置文件
 gulp.task('config-dev', function () {
+  gulp.src(['src/config/devConfig.json'])
+    .pipe(rename("config.json"))
+    .pipe(gulp.dest('config'));
   gulp.src('src/config/devConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
@@ -244,6 +247,9 @@ gulp.task('config-dev', function () {
 
 //生成发布环境环境配置文件
 gulp.task('config-prod', function () {
+  gulp.src(['src/config/prodConfig.json'])
+    .pipe(rename("config.json"))
+    .pipe(gulp.dest('config'));
   gulp.src('src/config/prodConfig.json')
     .pipe(gulpNgConfig('baseConfig'))
     .pipe(rename("baseConfig.js"))
