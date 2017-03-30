@@ -46,7 +46,8 @@
 
     $timeout(function () {
       window.localStorage.needGuid = "true"
-      window.localStorage.userToken = ""
+      //为什么去掉userToken，这样后面的所有的接口表头都没有了 add by songsong.zhang
+      // window.localStorage.userToken = ""
     },2000)
 
     vm.tabArray = [

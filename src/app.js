@@ -20,9 +20,9 @@
   angular.module('myApp')
     .run(angularRun);
 
-  angularRun.$inject = ['$ionicPlatform'];
+  angularRun.$inject = ['$ionicPlatform', 'hmsJpushService'];
 
-  function angularRun($ionicPlatform) {
+  function angularRun($ionicPlatform, hmsJpushService) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -40,6 +40,9 @@
         navigator.splashscreen.hide();
       } catch (e) {
       }
+
+      //初始化极光推送
+      hmsJpushService.initJpush();
     });
   }
 

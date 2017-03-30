@@ -1,0 +1,55 @@
+.messageList {
+  background: #fafafa;
+  .list {
+    padding: 0;
+    .item {
+      margin-top: 0.6rem;
+      padding: 0;
+      border: none;
+      background: transparent;
+      .time {
+        margin-bottom: 0.75rem;
+        text-align: center;
+        font-size: 0.65rem;
+        color: #9b9b9b;
+      }
+      .contain {
+        margin: 0 0.75rem;
+        padding: 0.75rem 0.75rem 0;
+        border-radius: 0.5rem;
+        border: 1px #e9e9e9 solid;
+        background: white;
+        white-space: normal;
+        .title {
+          color: black;
+          font-size: 0.8rem;
+          margin-bottom: 0.75rem;
+        }
+        .content {
+          color: #9b9b9b;
+          font-size: 0.8rem;
+          margin-bottom: 0.75rem;
+        }
+        .look {
+          margin: 0 -0.75rem;
+          padding: 0.75rem 0.75rem 0.75rem 0;
+          border-top: 1px #e9e9e9 solid;
+          display: flex;
+          justify-content: flex-end;
+          div:first-of-type {
+            font-size: 0.8rem;
+            color: black;
+          }
+          img {
+            margin: 0.15rem 0 0 0.5rem;
+            width: 0.4rem;
+            height: 0.8rem;
+          }
+        }
+      }
+    }
+    .item:last-of-type {
+      margin-bottom: 1rem;
+    }
+  }
+}

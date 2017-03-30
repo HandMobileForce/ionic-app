@@ -143,7 +143,7 @@
     }
 
     function fetchData(success) {
-      var url = baseConfig.interfacePath + 'i/api/appUpdate';
+      var url = baseConfig.interfacePath + 'appUpdate';
       var params = {
         "appEquipment": "Android"
       }

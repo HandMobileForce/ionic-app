@@ -19,6 +19,7 @@
     '$ionicScrollDelegate',
     'checkVersionService',
     'hmsPopup',
+    'hmsJpushService',
     '$rootScope'];
 
   function loginCtrl($scope,
@@ -32,6 +33,7 @@
                      $ionicScrollDelegate,
                      checkVersionService,
                      hmsPopup,
+                     hmsJpushService,
                      $rootScope) {
     //将页面的导航bar设置成白色
     $ionicPlatform.ready(function () {
@@ -382,7 +384,7 @@
             console.log("result success " + angular.toJson(result));
           }
           //绑定推送服务
-          //hmsJpushService.bind($scope.loginInfo.username);
+          hmsJpushService.startJpush();
 
           if (result.access_token && result.access_token != '') {
             window.localStorage.userToken = result.access_token;

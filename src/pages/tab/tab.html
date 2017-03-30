@@ -18,16 +18,16 @@
 <ion-view view-title="应用" class="hms-tab">
     <div class="hms-tab-page"
          ng-include="'build/pages/message/message.html'"
-         ng-show="vm.tabArray[0].isActive"></div>
+         ng-if="vm.tabArray[0].isActive"></div>
     <div class="hms-tab-page"
          ng-include="'build/pages/application/application.html'"
-         ng-show="vm.tabArray[1].isActive"></div>
+         ng-if="vm.tabArray[1].isActive"></div>
     <div class="hms-tab-page"
          ng-include="'build/pages/contact/contact.html'"
-         ng-show="vm.tabArray[2].isActive"></div>
+         ng-if="vm.tabArray[2].isActive"></div>
     <div class="hms-tab-page"
          ng-include="'build/pages/myInfo/myInfo.html'"
-         ng-show="vm.tabArray[3].isActive"></div>
+         ng-if="vm.tabArray[3].isActive"></div>
 
     <ion-footer-bar class="hms-tab-bar">
         <div ng-repeat="tab in vm.tabArray" ng-click="vm.clickTab(tab)" class="hms-tab-item">
