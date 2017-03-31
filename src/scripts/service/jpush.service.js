@@ -27,7 +27,7 @@
     };
 
     //获取推送显示标题
-    this.getAlert = function () {
+    this.getAlert = function (event) {
       var alertContent;
       if (ionic.Platform.isAndroid()) {
         alertContent = event.alert;
@@ -37,7 +37,7 @@
       return alertContent;
     };
 
-    this.getExtras = function () {
+    this.getExtras = function (event) {
       var extras;
       if (ionic.Platform.isAndroid()) {
         extras = event.extras;

@@ -3,7 +3,7 @@
  */
 
 (function () {
-  'use strict'; 
+  'use strict';
 
   angular
     .module('utilModule')
@@ -72,6 +72,28 @@
       } else {
         $cordovaToast.showLongBottom((angular.isDefined(content) ? content : "操作失败")).then(function (success) {
         }, function (error) {
+        });
+      }
+    };
+    this.showPromptToast = function (content, infoType) {
+      if (ionic.Platform.isWebView()) {
+        $ionicLoading.hide();
+        if (infoType == 'warn') {
+          $cordovaToast.showShortCenter((angular.isDefined(content) ? content : "操作失败")).then(function (success) {
+          }, function (error) {
+          });
+        } else if (infoType == 'inform') {
+          $cordovaToast.showShortTop((angular.isDefined(content) ? content : "操作失败")).then(function (success) {
+          }, function (error) {
+          });
+        }
+      } else {
+        $ionicLoading.show({
+          template: (angular.isDefined(content) ? content : "操作失败"),
+          animation: 'fade-in',
+          showBackdrop: false,
+          maxWidth: 200,
+          duration: 1500
         });
       }
     };
