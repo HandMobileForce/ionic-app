@@ -11,7 +11,7 @@
         url: '/messageList',
         params: {messageType: null, messageGroupName: null},
         templateUrl: 'build/pages/message/messageList/messageList.html',
-        controller: 'MessageListCtrl',
+        controller: 'messageListCtrl',
         controllerAs: 'messageListVM'
       });
   }

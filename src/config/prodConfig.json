@@ -6,6 +6,7 @@
     "nativeScreenFlag":true,
     "appStoreFlag": false,
     "isWeixinWebview": false,
+    "pageSize": "10",
     "JPUSH_APP_KEY": "7c3279d19661a7e03a0c8181",
     "appEnvironment": "production",
     "basePath": "https://mobile-app.hand-china.com/hmap/r/api?sysName=CRM&apiName=",

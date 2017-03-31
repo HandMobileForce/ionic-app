@@ -1,24 +1,20 @@
 <ion-view ng-controller="messageCtrl as messageVM" class="message">
-  <ion-header-bar class="header-title">
-    <div class="searchDiv">
-      <img src="build/assets/img/message/search@3x.png"/>
-      <input type="search" placeholder="搜索">
-    </div>
-    <div class="buttons">
-      <img src="build/assets/img/message/plus@3x.png" />
-    </div>
+  <ion-header-bar align-title="center" class="bar-stable header-title">
+    <div class="title">消息</div>
   </ion-header-bar>
   <ion-content>
+    <div class="null" ng-if="messageVM.messageList.length == 0">暂无数据</div>
     <div class="list">
-      <div class="list-item" ng-repeat="item in messageVM.list">
-        <img ng-src="{{item.img}}"/>
-        <div class="content">
-          <div>{{item.title}}</div>
-          <div>{{item.desc}}</div>
+      <div class="item" ng-repeat="item in messageVM.messageList" ng-click="messageVM.goToList(item, item.unreadCount)">
+        <img ng-src="{{item.messageGroupCode|messageIconFilter}}"/>
+        <div class="desc">
+          <div>{{item.messageGroupName}}</div>
+          <div>{{item.pushListTitle}}</div>
         </div>
-        <div class="flag">
-          <div>{{item.time}}</div>
-          <div data-ng-show="item.unread>0">{{item.unread}}</div>
+        <div class="timeNum">
+          <div>{{item.creationDate|messageTimeFilter}}</div>
+          <!--这是使用opacity，因为使用display属性会使计数元素占位空间消失-->
+          <div ng-style="{opacity:(item.unreadCount>0?1:0)}">{{item.unreadCount}}</div>
         </div>
       </div>
     </div>

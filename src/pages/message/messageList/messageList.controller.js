@@ -1,9 +1,8 @@
-
 (function () {
   angular.module('messageModule')
     .controller('messageListCtrl', messageListCtrl);
   /** @ngInject */
-  function messageListCtrl($scope, $state, hmsPopup, hmsHttp, baseConfig, $stateParams, $timeout) {
+  function messageListCtrl($scope, $timeout, hmsPopup, hmsHttp, baseConfig, $stateParams, $ionicHistory) {
     var messageListVM = this;
     var page = 1;
     var pageSize = baseConfig.pageSize;
@@ -14,13 +13,17 @@
     messageListVM.doRefresh = doRefresh;
     messageListVM.loadMore = loadMore;
     messageListVM.goRedirect = goRedirect;
+    messageListVM.goBack = goBack;
     hmsPopup.showLoading('请求中...');
     getMessageList();
 
+    //获取消息列表数据
     function getMessageList(param) {
-      hmsHttp.get(baseConfig.basePath + "/userMessage/queryMessageDetail?" +
+      hmsHttp.get(baseConfig.interfacePath + "/userMessage/queryMessageDetail?" +
         "page=" + page + "&pagesize=" + pageSize + "&messageGroupCode=" + messageGroupCode).then(function (result) {
-        hmsPopup.hideLoading();
+        $timeout(function () {
+          hmsPopup.hideLoading();
+        }, 500);
         messageListVM.infiniteLoad = result.rows.length >= pageSize;
         messageListVM.messageList = messageListVM.messageList.concat(result.rows);
       }, function (result) {
@@ -35,17 +38,17 @@
       });
     }
 
-    //系统消息页面重定向
+    //消息页面重定向
     function goRedirect(item) {
       //如果存在重定向，则进行页面跳转
       if (item.redirectUrl) {
-        if (item.redirectUrl == 'medAlterList') {
-          //如果是跳转到服药计划详情页，则传参数过去，只看相应的服药计划推荐
-          $state.go(item.redirectUrl, {processGroupId: item.extrasParams.processGroupId});
-        } else {
-          //其他的直接跳转，不传参数
-          $state.go(item.redirectUrl);
-        }
+        // if (item.redirectUrl == 'medAlterList') {
+        //   //如果是跳转到服药计划详情页，则传参数过去，只看相应的服药计划推荐
+        //   $state.go(item.redirectUrl, {processGroupId: item.extrasParams.processGroupId});
+        // } else {
+        //   //其他的直接跳转，不传参数
+        //   $state.go(item.redirectUrl);
+        // }
       }
     }
 
@@ -60,6 +63,11 @@
     function loadMore() {
       page++;
       getMessageList('loadMore');
+    }
+
+    //页面回退
+    function goBack() {
+      $ionicHistory.goBack();
     }
   }
 })();

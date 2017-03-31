@@ -102,3 +102,8 @@ hand-portal-app/
 ├── config.xml                          * Cordova configuration file
 ├── package.json                        * Defines our JavaScript dependencies
 ```
+
+## HOOKS
+添加了before_build和before_compile文件夹，对极光推送插件的APP_KEY进行动态配置，并修改了极光插件。添加极光插件时不需要添加APP_KEY，
+配置到src/config里面的json文件中即可，运行gulp命令会把配置编译到config/config.json中，hooks会从中读取APP_KEY编译到平台中，环境切  
+换非常方便，不需要改代码，配置下即可。

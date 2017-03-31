@@ -5,7 +5,7 @@
   angular.module('utilModule')
     .factory('hmsHttp', hmsHttp);
   /* @ngInject */
-  function hmsHttp($http, hmsPopup, $state, $q) {
+  function hmsHttp($http, hmsPopup, $state, $q, hmsJpushService) {
     //返回promise对象
     return {
       doLoginOut: function () {

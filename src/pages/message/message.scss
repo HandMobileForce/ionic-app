@@ -1,86 +1,58 @@
 .message {
-  .header-title {
-    display: flex;
-    position: relative;
-    .searchDiv {
-      position: relative;
-      flex: 1;
-      display: flex;
-      img {
-        width: 0.7rem;
-        position: absolute;
-        top: 0.75rem;
-        left: 1.3rem;
-      }
-      input {
-        width: 100%;
-        margin: 0.35rem 0 0.35rem 0.75rem;
-        padding-left: 1.4rem;
-        height: 1.2rem;
-        line-height: 1.2rem;
-        background: #FAFAFA;
-        border: 0.05rem solid #E9E9E9;
-        border-radius: 2rem;
-      }
-    }
-    .buttons {
-      padding: 0 0.75rem;
-      img {
-        margin-top: 0.65rem;
-        width: 0.9rem;
-        height: 0.9rem;
-      }
-    }
+  background: #fafafa;
+  .null {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #9b9b9b;
+    letter-spacing: 0.1rem;
   }
   .list {
-    margin-top: -0.1rem;
-    .list-item {
+    background: white;
+    box-shadow: 0 0 0.05rem #eaeaea;
+    padding: 0;
+    .item {
       display: flex;
-      padding-top: 0.8rem;
-      height: 3.8rem;
-      border-bottom: 0.05rem solid #E9E9E9;
-
+      align-items: center;
+      padding: 1rem 0;
+      border: none;
+      box-shadow: 0 0 0.15rem #eaeaea;
       img {
-        margin: 0 0.75rem;
         width: 2.25rem;
-        min-width: 2.25rem;
         height: 2.25rem;
-        border-radius: 2.25rem;
+        margin: 0 0.5rem 0 0.75rem;
       }
-
-      .content {
+      .desc {
         flex: 1;
-        overflow: hidden;
-        div {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
         div:first-of-type {
-          font-size: 0.75rem;
-          color: #4A4A4A;
-          padding-bottom: 0.2rem;
+          font-size: 0.8rem;
+          color: black;
         }
-        div:last-of-type {
-          font-size: 0.65rem;
-          color: #9B9B9B;
+        div:nth-of-type(2) {
+          font-size: 0.7rem;
+          color: #9b9b9b;
+          margin-top: 0.2rem;
+          padding-right: 0.4rem;
+          white-space: normal;
         }
       }
-      .flag {
-        min-width: 2.2rem;
-        margin: 0 0.75rem;
+      .timeNum {
+        margin-right: 0.75rem;
         div:first-of-type {
-          font-size: 0.6rem;
-          color: #9B9B9B;
-          padding-bottom: 0.2rem;
+          font-size: 0.55rem;
+          color: #9b9b9b;
+          text-align: right;
         }
-        div:last-of-type {
-          text-align: center;
+        div:nth-of-type(2) {
+          margin-top: 0.2rem;
+          padding: 0 0.2rem;
+          float: right;
           min-width: 2.25rem;
           height: 1rem;
-          border-radius: 15px;
+          background: #d0021b;
+          border-radius: 0.5rem;
+          text-align: center;
           color: white;
-          background: #F96F68;
         }
       }
     }

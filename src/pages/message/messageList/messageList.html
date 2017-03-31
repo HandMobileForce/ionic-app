@@ -1,7 +1,7 @@
 <ion-view class="messageList">
   <ion-header-bar align-title="center" class="bar-stable header-title">
-    <div class="buttons" ng-click="goBack();">
-      <img class="backImg" src="build/img/back@3x.png"/>
+    <div class="buttons" ng-click="messageListVM.goBack();">
+      <img class="backImg" src="build/assets/img/back@3x.png"/>
     </div>
     <div class="title">{{messageListVM.messageGroupName}}</div>
   </ion-header-bar>
@@ -16,7 +16,7 @@
           <div class="content">{{item.pushListContent}}</div>
           <div class="look" ng-if="item.redirectUrl">
             <div>查看详情</div>
-            <img src="build/img/Path-b@3x.png"/>
+            <img src="build/assets/img/Path-b@3x.png"/>
           </div>
         </div>
       </div>
