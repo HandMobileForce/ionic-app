@@ -1,10 +1,10 @@
-/*1rem单位大小*/
+//1rem单位大小
 html {
   font-size: 20px;
   background: white;
 }
 
-/*公共tab样式*/
+//公共tab样式
 .header-title {
   padding: 0;
   .title {
@@ -18,5 +18,58 @@ html {
       height: 1rem;
       margin: 0.6rem 0.6rem 0 0.6rem;
     }
+  }
+}
+
+.border-1px {
+  position: relative;
+}
+
+.border-1px:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 0.05rem solid #E9E9E9;
+  content: ' ';
+}
+
+//隐藏滚动条，浏览器上奏效
+.scroll-bar {
+  display: none;
+}
+
+//隐藏滚动条，手机上奏效
+::-webkit-scrollbar {
+  display: none;
+}
+
+//一像素问题
+@media (-webkit-min-device-pixel-ratio: 1), (min-device-pixel-ratio: 1) {
+  .border-1px:after {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+  .border-1px:after {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .border-1px:after {
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .border-1px:after {
+    -webkit-transform: scaleY(0.333333);
+    transform: scaleY(0.333333);
   }
 }

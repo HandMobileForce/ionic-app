@@ -9,14 +9,12 @@
   }
   .list {
     background: white;
-    box-shadow: 0 0 0.05rem #eaeaea;
     padding: 0;
-    .item {
+    .message-item {
       display: flex;
       align-items: center;
       padding: 1rem 0;
       border: none;
-      box-shadow: 0 0 0.15rem #eaeaea;
       img {
         width: 2.25rem;
         height: 2.25rem;
@@ -24,16 +22,19 @@
       }
       .desc {
         flex: 1;
+        overflow: hidden;
         div:first-of-type {
           font-size: 0.8rem;
           color: black;
         }
         div:nth-of-type(2) {
-          font-size: 0.7rem;
-          color: #9b9b9b;
           margin-top: 0.2rem;
           padding-right: 0.4rem;
-          white-space: normal;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 0.7rem;
+          color: #9b9b9b;
         }
       }
       .timeNum {

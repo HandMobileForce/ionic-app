@@ -6,24 +6,34 @@
   angular.module('messageModule')
     .controller('messageCtrl', messageCtrl);
   /* @ngInject */
-  function messageCtrl($scope, hmsHttp, hmsPopup, baseConfig, $state, $timeout) {
+  function messageCtrl($scope, hmsHttp, hmsPopup, baseConfig, $state, cacheService) {
     var messageVM = this;
     messageVM.goToList = goToList;
 
-    getMessage();
+    getData();
     $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+      //页面回退需要重新请求数据
       if (toState.url == '/tab') {
-        getMessage();
+        getData();
       }
     });
 
+    //请求数据（从cacheService或者接口请求数据）
+    function getData() {
+      if (!cacheService.get('messageList')) {
+        hmsPopup.showLoading('请求中...');
+        getMessage();
+      } else {
+        messageVM.messageList = cacheService.get('messageList');
+        getMessage();
+      }
+    }
+
     //获取消息列表数据
     function getMessage() {
-      hmsPopup.showLoading('请求中...');
       hmsHttp.get(baseConfig.interfacePath + "userMessage/queryMessageList").then(function (result) {
-        $timeout(function () {
-          hmsPopup.hideLoading();
-        }, 500);
+        hmsPopup.hideLoadingDelay();
+        cacheService.set('messageList', result.rows);
         messageVM.messageList = result.rows;
       }, function (result) {
         hmsPopup.showShortCenterToast('请求执行失败!');

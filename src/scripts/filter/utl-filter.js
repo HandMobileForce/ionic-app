@@ -5,25 +5,7 @@
 //消息类型提示图标
 (function () {
   angular.module('utilModule')
-    .filter('messageIconFilter', messageIconFilter)
     .filter('messageTimeFilter', messageTimeFilter);
-
-  //消息类型提示图标
-  function messageIconFilter() {
-    return function (data) {
-      var baseUrl = 'build/assets/img/message/';
-      switch (data) {
-        case 'health_remind':
-          return baseUrl + 'health@3x.png';
-        case 'system_information':
-          return baseUrl + 'system@3x.png';
-        case 'activity_remind':
-          return baseUrl + 'activity@3x.png';
-        default:
-          return baseUrl + 'health@3x.png';
-      }
-    }
-  }
 
   //消息时间提示文本
   /* @ngInject */

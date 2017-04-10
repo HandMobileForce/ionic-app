@@ -5,8 +5,8 @@
   <ion-content>
     <div class="null" ng-if="messageVM.messageList.length == 0">暂无数据</div>
     <div class="list">
-      <div class="item" ng-repeat="item in messageVM.messageList" ng-click="messageVM.goToList(item, item.unreadCount)">
-        <img ng-src="{{item.messageGroupCode|messageIconFilter}}"/>
+      <div class="message-item border-1px" ng-repeat="item in messageVM.messageList" ng-click="messageVM.goToList(item, item.unreadCount)">
+        <img ng-src="{{item.messageGroupIconUrl}}"/>
         <div class="desc">
           <div>{{item.messageGroupName}}</div>
           <div>{{item.pushListTitle}}</div>

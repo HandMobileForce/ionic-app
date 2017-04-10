@@ -9,10 +9,8 @@
     .module('utilModule')
     .service('hmsPopup', hmsPopup);
 
-  hmsPopup.$inject = [
-    '$ionicLoading', '$cordovaToast', '$ionicPopup', 'baseConfig'];
-
-  function hmsPopup($ionicLoading, $cordovaToast, $ionicPopup, baseConfig) {
+  /* @ngInject */
+  function hmsPopup($ionicLoading, $cordovaToast, $ionicPopup, baseConfig, $timeout) {
     this.showLoading = function (content) {
       content = !content ? '加载中' : content;
       $ionicLoading.show({
@@ -29,6 +27,11 @@
     };
     this.hideLoading = function () {
       $ionicLoading.hide();
+    };
+    this.hideLoadingDelay = function () {
+      $timeout(function () {
+        $ionicLoading.hide();
+      }, 500);
     };
     this.showShortCenterToast = function (content) {//长时间底部提示toast
       if (!baseConfig.nativeScreenFlag) {

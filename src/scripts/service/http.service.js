@@ -21,29 +21,21 @@
         var self = this;
         $http.post(url, param, config).then(function (response) {
           response = response.data;
-          if (!response.hasOwnProperty("success")) { //不带success 字段的-oauth2验证接口
-            if (!response.access_token) {
-              hmsPopup.showShortCenterToast('请求执行失败!');
-            } else {
-              defered.resolve(response);
-            }
+          if (response.hasOwnProperty("success") && !response.success) {
+            defered.reject(response);
           } else {
-            if (!response.success) {
-              defered.reject(response);
-            } else {
-              if (response.rows && response.rows.length > 0) {
-                if (response.rows[0].hasOwnProperty("head")) {
-                  if (response.rows[0].head.retcode != 's') {
-                    hmsPopup.showShortCenterToast('请求执行失败!');
-                  } else {
-                    defered.resolve(response);
-                  }
+            if (response.rows && response.rows.length > 0) {
+              if (response.rows[0].hasOwnProperty("head")) {
+                if (response.rows[0].head.retcode != 's') {
+                  hmsPopup.showShortCenterToast('请求执行失败!');
                 } else {
                   defered.resolve(response);
                 }
               } else {
                 defered.resolve(response);
               }
+            } else {
+              defered.resolve(response);
             }
           }
         }, function (response, status) {

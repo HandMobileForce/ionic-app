@@ -2,7 +2,7 @@
   angular.module('messageModule')
     .controller('messageListCtrl', messageListCtrl);
   /** @ngInject */
-  function messageListCtrl($scope, $timeout, hmsPopup, hmsHttp, baseConfig, $stateParams, $ionicHistory) {
+  function messageListCtrl($scope, hmsPopup, hmsHttp, baseConfig, $stateParams, $ionicHistory) {
     var messageListVM = this;
     var page = 1;
     var pageSize = baseConfig.pageSize;
@@ -21,9 +21,7 @@
     function getMessageList(param) {
       hmsHttp.get(baseConfig.interfacePath + "/userMessage/queryMessageDetail?" +
         "page=" + page + "&pagesize=" + pageSize + "&messageGroupCode=" + messageGroupCode).then(function (result) {
-        $timeout(function () {
-          hmsPopup.hideLoading();
-        }, 500);
+        hmsPopup.hideLoadingDelay();
         messageListVM.infiniteLoad = result.rows.length >= pageSize;
         messageListVM.messageList = messageListVM.messageList.concat(result.rows);
       }, function (result) {

@@ -91,15 +91,6 @@
         controllerAs: 'vm'
       })
       // Each tab has its own nav history stack:
-      .state('tab.application', {
-        url: '/application',
-        views: {
-          'tab-application': {
-            templateUrl: 'build/pages/application/application.html',
-            controller: ''
-          }
-        }
-      })
       .state('tab.contact', {
         url: '/contact',
         views: {
