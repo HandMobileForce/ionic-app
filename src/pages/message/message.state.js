@@ -10,7 +10,7 @@
       .state('messageList', {
         url: '/messageList',
         params: {messageType: null, messageGroupName: null},
-        templateUrl: 'build/pages/message/messageList/messageList.html',
+        templateUrl: 'build/pages/message/message-list/message-list.html',
         controller: 'messageListCtrl',
         controllerAs: 'messageListVM'
       });
