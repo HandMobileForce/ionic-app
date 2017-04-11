@@ -1,5 +1,34 @@
 .application {
   background: #efefef;
+  .bar-header {
+    padding: 0;
+    .input-wrapper {
+      position: relative;
+      padding: 0.35rem 0.75rem;
+      width: 100%;
+      input {
+        padding: 0 0 0 1.75rem;
+        height: 1.5rem;
+        width: 100%;
+        border: 0.05rem #E9E9E9 solid;
+        border-radius: 2rem;
+        font-size: 14px;
+        color: #9B9B9B;
+        letter-spacing: 0;
+        line-height: 1.5rem;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Safari 和 Chrome */
+        appearance: none;
+      }
+      img {
+        position: absolute;
+        top: 0.75rem;
+        left: 1.5rem;
+        width: 0.7rem;
+        height: 0.7rem;
+      }
+    }
+  }
   .menu-list {
     .menu-item {
       margin-top: 0.5rem;
