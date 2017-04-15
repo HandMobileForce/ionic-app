@@ -40,9 +40,7 @@
           }
         }, function (response, status) {
           response = response.data;
-          if (response && response.error == 'unauthorized') {  //这种情况拿出来做处理，注册最后一步设置密码会把游客token给清除掉，所以页面回退再调用接口会报错
-            defered.reject(response);
-          } else if (response && response.error_description == 'badCredentials') {
+          if (response && response.error == 'invalid_grant') {
             hmsPopup.showShortCenterToast('用户名不存在或密码错误!');
           } else if (response && response.error_description == 'blocked') {
             hmsPopup.showShortCenterToast('您连续输错密码,账号已被锁,请稍后重试!');

@@ -12,7 +12,7 @@
     'messageModule',
     'contactModule',
     'applicationModule',
-    'myInfoModule',
+    'mineModule',
     'utilModule',
     'hmsModule'
   ]);
@@ -96,15 +96,6 @@
         views: {
           'tab-contact': {
             templateUrl: 'build/pages/contact/contact.html',
-            controller: ''
-          }
-        }
-      })
-      .state('tab.myInfo', {
-        url: '/myInfo',
-        views: {
-          'tab-myInfo': {
-            templateUrl: 'build/pages/myInfo/myInfo.html',
             controller: ''
           }
         }

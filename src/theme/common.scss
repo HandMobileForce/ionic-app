@@ -35,6 +35,10 @@ html {
   content: ' ';
 }
 
+.rest {
+  flex: 1;
+}
+
 //隐藏滚动条，浏览器上奏效
 .scroll-bar {
   display: none;

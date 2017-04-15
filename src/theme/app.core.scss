@@ -6,7 +6,6 @@
 // App Shared Sass variables belong in src.variables.scss.
 @import "../scss/_variables.scss";
 
-@import "../pages/application/application";
 @import "../pages/application/plan/plan";
 @import "../pages/tab/tab";
 @import "../pages/login/login";
@@ -17,3 +16,7 @@
 //消息模块
 @import "../pages/message/message";
 @import "../pages/message/message-list/message-list";
+//应用模块
+@import "../pages/application/application";
+//我的模块
+@import "../pages/mine/mine";

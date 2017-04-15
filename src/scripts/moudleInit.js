@@ -9,6 +9,6 @@
   angular.module('messageModule', []);
   angular.module('contactModule', []);
   angular.module('applicationModule', []);
-  angular.module('myInfoModule', []);
+  angular.module('mineModule', []);
   angular.module('utilsModule', []);
 })();

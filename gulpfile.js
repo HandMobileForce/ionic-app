@@ -230,10 +230,7 @@ gulp.task('copy-publish-lib', function (callback) {
 //合并压缩css文件
 gulp.task('sass', function () {
   return gulp.src(['src/theme/*.scss'])
-    .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write({includeContent: false}))
-    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
       browsers: ['iOS > 6', 'not ie < 6', '> 5%'],
       cascade: true, //是否美化属性值 默认：true 像这样：
@@ -241,7 +238,6 @@ gulp.task('sass', function () {
       //        transform: rotate(45deg);
       remove: true //是否去掉不必要的前缀 默认：true
     }))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('www/build/css'));
 });
 

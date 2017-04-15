@@ -1,0 +1,78 @@
+<ion-view ng-controller="mineCtrl as mineVM" class="mine">
+  <ion-header-bar align-title="center" class="bar-stable" id="elasticImage">
+    <div class="logout-wrapper">
+      <img class="logout-img" src="build/assets/img/mine/logout@3x.png">
+      <div class="text">退出</div>
+    </div>
+    <div class="my-info-wrapper">
+      <div class="img-wrapper">
+        <img class="avatar" ng-src="{{mineVM.detail.avatar}}">
+        <img class="path" src="build/assets/img/Path-w@3x.png">
+      </div>
+      <div class="name">{{mineVM.detail.empName}}</div>
+      <div class="code">{{mineVM.detail.empCode}}</div>
+    </div>
+    <div class="setting-wrapper">
+      <img class="setting-img" src="build/assets/img/mine/setup.png">
+    </div>
+  </ion-header-bar>
+  <ion-content elastic-image="elasticImage" elastic-height="157">
+    <div class="info-wrapper">
+      <div class="info-item">
+        <img class="info-item-img" src="build/assets/img/mine/position@3x.png">
+        <div class="info-item-text">{{mineVM.detail.positionName}}</div>
+      </div>
+      <div class="info-item">
+        <img class="info-item-img" src="build/assets/img/mine/level@3x.png">
+        <div class="info-item-text">{{mineVM.detail.level}}</div>
+      </div>
+      <div class="info-item">
+        <img class="info-item-img" src="build/assets/img/mine/base@3x.png">
+        <div class="info-item-text">{{mineVM.detail.baseName}}</div>
+      </div>
+    </div>
+    <div class="fun-wrapper">
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/businesscard@3x.png">
+        <div>我的名片</div>
+        <div class="new">NEW</div>
+        <div class="rest"></div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/face-recognition@3x.png">
+        <div>人脸识别</div>
+        <div class="rest"></div>
+        <div class="gray-txt">立即设置</div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/certificate@3x.png">
+        <div>我的证书</div>
+        <div class="rest"></div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/feedback@3x.png">
+        <div>意见反馈</div>
+        <div class="rest"></div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+    </div>
+    <div class="fun-wrapper">
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/help.png">
+        <div>帮助</div>
+        <div class="rest"></div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+      <div class="fun-wrapper-item">
+        <img class="fun-left-img" src="build/assets/img/mine/version.png">
+        <div>版本更新</div>
+        <div class="rest"></div>
+        <div class="gray-txt">当前版本V.2.0.1</div>
+        <img class="path-go" src="build/assets/img/Path-b@3x.png">
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

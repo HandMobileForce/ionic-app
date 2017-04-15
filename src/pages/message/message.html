@@ -1,6 +1,10 @@
 <ion-view ng-controller="messageCtrl as messageVM" class="message">
-  <ion-header-bar align-title="center" class="bar-stable header-title">
-    <div class="title">消息</div>
+  <ion-header-bar align-title="center" class="bar-stable">
+    <div class="input-wrapper">
+      <input type="text" placeholder="搜索"/>
+      <img class="search-img" src="build/assets/img/application/search@3x.png"/>
+      <img class="plus-img" src="build/assets/img/application/plus@3x.png"/>
+    </div>
   </ion-header-bar>
   <ion-content>
     <div class="null" ng-if="messageVM.messageList.length == 0">暂无数据</div>
@@ -11,7 +15,7 @@
           <div>{{item.messageGroupName}}</div>
           <div>{{item.pushListTitle}}</div>
         </div>
-        <div class="timeNum">
+        <div class="time-num">
           <div>{{item.creationDate|messageTimeFilter}}</div>
           <!--这是使用opacity，因为使用display属性会使计数元素占位空间消失-->
           <div ng-style="{opacity:(item.unreadCount>0?1:0)}">{{item.unreadCount}}</div>
