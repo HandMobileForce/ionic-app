@@ -7,6 +7,9 @@
         link: function ($scope, $scroller, $attr) {
           var image = document.getElementById($attr.elasticImage);
           var imageHeight = $attr.elasticHeight;
+          if (ionic.Platform.isIOS() && ionic.Platform.isWebView()) {
+            imageHeight = parseFloat(imageHeight) + 20;
+          }
 
           $scroller.bind('scroll', function (e) {
             if (e.detail.scrollTop <= 0) {
