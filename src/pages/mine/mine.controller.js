@@ -38,7 +38,7 @@
         cacheService.set('mine', result.rows[0]);
         mineVM.detail = result.rows[0];
       }, function (result) {
-        hmsPopup.showShortCenterToast('请求执行失败!');
+        hmsPopup.showLongCenterToast('请求执行失败!');
       });
     }
 

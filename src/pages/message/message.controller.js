@@ -36,7 +36,7 @@
         cacheService.set('messageList', result.rows);
         messageVM.messageList = result.rows;
       }, function (result) {
-        hmsPopup.showShortCenterToast('请求执行失败!');
+        hmsPopup.showLongCenterToast('请求执行失败!');
       });
     }
 
@@ -50,7 +50,7 @@
           hmsPopup.hideLoading();
           $state.go('message-list', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});
         }, function (result) {
-          hmsPopup.showShortCenterToast('请求执行失败!');
+          hmsPopup.showLongCenterToast('请求执行失败!');
         });
       } else {
         $state.go('message-list', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});

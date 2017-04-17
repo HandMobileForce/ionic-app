@@ -26,7 +26,7 @@
         messageListVM.messageList = messageListVM.messageList.concat(result.rows);
       }, function (result) {
         messageListVM.infiniteLoad = false;
-        hmsPopup.showShortCenterToast('请求执行失败!');
+        hmsPopup.showLongCenterToast('请求执行失败!');
       }).finally(function () {
         if (param == 'refresh') {
           $scope.$broadcast('scroll.refreshComplete');  // 停止广播ion-refresher

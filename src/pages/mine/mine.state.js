@@ -12,6 +12,12 @@
         templateUrl: 'build/pages/mine/mine-detail/mine-detail.html',
         controller: 'mineDetailCtrl',
         controllerAs: 'mineDetailVM'
+      })
+      .state('feedback', {
+        url: '/feedback',
+        templateUrl: 'build/pages/mine/feedback/feedback.html',
+        controller: 'feedbackCtrl',
+        controllerAs: 'feedbackVM'
       });
   }
 })();

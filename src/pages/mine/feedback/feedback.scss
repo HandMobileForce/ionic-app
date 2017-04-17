@@ -1,0 +1,53 @@
+.feedback {
+  background: #fafafa;
+  .buttons:last-of-type {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    .head-submit {
+      color: #1F8CEB;
+    }
+  }
+  .type-wrapper {
+    overflow: auto;
+    padding: 0.5rem 0.75rem 0;
+    .type-desc {
+      margin: 0.55rem 0 0.25rem;
+      line-height: 0.7rem;
+      font-size: 0.7rem;
+      color: #6D7A80;
+    }
+    .type-item-div {
+      margin-left: -1rem;
+      .type-item {
+        float: left;
+        margin: 0.5rem 0 0 1rem;
+        padding: 0.4rem 1rem 0.45rem;
+        font-size: 0.7rem;
+        line-height: 0.7rem;
+        border: 0.05rem solid #D2D2D2;
+        border-radius: 5px;
+        color: #9B9B9B;
+        background: #FAFAFA;
+        &.active {
+          border: 0.05rem solid #1F8CEB;
+          color: #fff;
+          background: #1F8CEB;
+        }
+      }
+    }
+  }
+  .feedback-content {
+    margin-top: 0.75rem;
+    resize: none;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    color: #6D7A80;
+    background: #fff;
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+  }
+}

@@ -1,0 +1,22 @@
+<ion-view class="feedback">
+  <ion-header-bar align-title="center" class="bar-stable header-title">
+    <div class="buttons" ng-click="goBack()">
+      <img class="back-img" src="build/assets/img/go-back@3x.png"/>
+    </div>
+    <div class="title">反馈</div>
+    <div class="buttons" ng-click="feedbackVM.submit()">
+      <div class="head-submit">提交</div>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="type-wrapper">
+      <div class="type-desc">反馈问题类型</div>
+      <div class="type-item-div">
+        <div class="type-item" ng-repeat="type in feedbackVM.types"
+             ng-click="feedbackVM.selectType(type)" ng-class="{'active':feedbackVM.selectedType==type}">{{type}}
+        </div>
+      </div>
+    </div>
+    <textarea class="feedback-content" rows="6" placeholder="请填写产品质量问题反馈" data-ng-model="feedbackVM.content"></textarea>
+  </ion-content>
+</ion-view>
