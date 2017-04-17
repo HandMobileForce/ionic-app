@@ -18,6 +18,12 @@
         templateUrl: 'build/pages/mine/feedback/feedback.html',
         controller: 'feedbackCtrl',
         controllerAs: 'feedbackVM'
+      })
+      .state('settings', {
+        url: '/settings',
+        templateUrl: 'build/pages/mine/settings/settings.html',
+        controller: 'settingsCtrl',
+        controllerAs: 'settingsVM'
       });
   }
 })();

@@ -4,7 +4,7 @@
 (function () {
   angular.module('utilModule')
     .service('hmsJpushService', hmsJpushService);
-  function hmsJpushService(baseConfig) {
+  function hmsJpushService(baseConfig, $q) {
     //如果存在极光推送，则初始化极光推送
     this.initJpush = function () {
       if (window.plugins && window.plugins.jPushPlugin) {
@@ -24,6 +24,35 @@
         }
         window.plugins.jPushPlugin.setTagsWithAlias([baseConfig.appEnvironment], window.localStorage.empno);
       }
+    };
+
+    //关闭推送
+    this.stopPush = function () {
+      if (window.plugins && window.plugins.jPushPlugin) {
+        window.plugins.jPushPlugin.stopPush();
+      }
+    };
+
+    //恢复推送服务
+    this.resumePush = function () {
+      if (window.plugins && window.plugins.jPushPlugin) {
+        window.plugins.jPushPlugin.resumePush();
+      }
+    };
+
+    //判断是否已经开启推送
+    this.isPushStopped = function () {
+      var defered = $q.defer();
+      if (window.plugins && window.plugins.jPushPlugin) {
+        window.plugins.jPushPlugin.isPushStopped(function (data) {
+          if (data == 0) {
+            defered.resolve();
+          }
+        });
+      } else {
+        defered.resolve();
+      }
+      return defered.promise;
     };
 
     //获取推送显示标题

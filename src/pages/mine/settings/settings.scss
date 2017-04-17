@@ -1,0 +1,54 @@
+.settings {
+  background: #fafafa;
+  .settings-wrapper {
+    margin-top: 0.55rem;
+    padding-left: 0.75rem;
+    background: #fff;
+    .setting-item {
+      position: relative;
+      display: flex;
+      .key {
+        padding: 0.75rem 0;
+        line-height: 0.7rem;
+        font-size: 0.7rem;
+        color: #4A4A4A;
+      }
+      .value {
+        margin-right: 0.75rem;
+        flex: 1;
+        text-align: right;
+        .toggle {
+          margin-top: 0.2rem;
+          .track {
+            margin-top: 0.2rem;
+            width: 2.5rem;
+            height: 1rem;
+            background-color: #d2d2d2;
+            border-color: #d2d2d2;
+            .handle {
+              left: 0.25rem;
+              width: 1.2rem;
+              height: 1.2rem;
+              border-radius: 50%;
+            }
+          }
+          &.toggle-assertive input:checked + .track {
+            background-color: #f09c3a;
+            border-color: #f09c3a;
+            .handle {
+              transform: translate3d(1.3rem, 0, 0);
+            }
+          }
+        }
+      }
+      &.setting-item:not(:last-child):after {
+        position: absolute;
+        bottom: 0;
+        content: ' ';
+        width: 100%;
+        height: 0;
+        border-top: 0.05rem solid #E9E9E9;
+      }
+    }
+  }
+}

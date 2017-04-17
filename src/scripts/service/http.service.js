@@ -10,10 +10,7 @@
     return {
       doLoginOut: function () {
         hmsJpushService.logoutJpush();
-        window.localStorage.removeItem("token");
-        window.localStorage.removeItem("refresh_token");
-        window.localStorage.removeItem("token_type");
-        window.localStorage.removeItem("status");
+        window.localStorage.removeItem("userToken");
         $state.go('login');
       },
       post: function (url, param, config) {

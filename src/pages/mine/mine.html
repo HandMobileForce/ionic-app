@@ -1,6 +1,6 @@
 <ion-view ng-controller="mineCtrl as mineVM" class="mine">
   <ion-header-bar align-title="center" class="bar-stable" id="elasticImage">
-    <div class="logout-wrapper">
+    <div class="logout-wrapper" ng-click="mineVM.logout()">
       <img class="logout-img" src="build/assets/img/mine/logout@3x.png">
       <div class="text">退出</div>
     </div>
@@ -12,7 +12,7 @@
       <div class="name">{{mineVM.detail.empName}}</div>
       <div class="code">{{mineVM.detail.empCode}}</div>
     </div>
-    <div class="setting-wrapper">
+    <div class="setting-wrapper" ng-click="go('settings')">
       <img class="setting-img" src="build/assets/img/mine/setup.png">
     </div>
   </ion-header-bar>

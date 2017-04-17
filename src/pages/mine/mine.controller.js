@@ -8,6 +8,8 @@
   /* @ngInject */
   function mineCtrl($scope, hmsHttp, hmsPopup, baseConfig, cacheService) {
     var mineVM = this;
+    mineVM.clickHelp = clickHelp;
+    mineVM.logout = logout;
 
     getData();
     $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
@@ -43,9 +45,14 @@
     }
 
     //点击帮助
-    mineVM.clickHelp = function () {
+    function clickHelp() {
       window.open("http://g.eqxiu.com/s/sRGxXCQn", '_system', 'location=yes');
-    };
+    }
+
+    //退出登录
+    function logout() {
+      hmsHttp.doLoginOut();
+    }
   }
 })();
 

@@ -1,0 +1,34 @@
+<ion-view class="settings">
+  <ion-header-bar align-title="center" class="bar-stable header-title">
+    <div class="buttons" ng-click="goBack()">
+      <img class="back-img" src="build/assets/img/go-back@3x.png"/>
+    </div>
+    <div class="title">设置</div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="settings-wrapper">
+      <div class="setting-item">
+        <div class="key">HRMS自动填写</div>
+        <div class="value">
+          <label class="toggle toggle-assertive">
+            <input type="checkbox" ng-model="settingsVM.auto">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="setting-item">
+        <div class="key">消息推送</div>
+        <div class="value">
+          <label class="toggle toggle-assertive" ng-click="settingsVM.togglePush()">
+            <input type="checkbox" ng-model="settingsVM.push">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
