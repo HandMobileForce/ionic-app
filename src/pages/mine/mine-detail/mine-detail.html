@@ -6,6 +6,98 @@
     <div class="title">个人信息</div>
   </ion-header-bar>
   <ion-content>
-    <div class="base-info"></div>
+    <div class="info-wrapper">
+      <div class="info-item">
+        <div class="key">头像：</div>
+        <div class="value">
+          <img class="value-img" ng-src="{{mineDetailVM.info.avatar}}">
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="key">工号：</div>
+        <div class="value">{{mineDetailVM.info.empCode}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">姓名：</div>
+        <div class="value">{{mineDetailVM.info.empName}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">英文名：</div>
+        <div class="value">{{mineDetailVM.info.englishName}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">部门：</div>
+        <div class="value">{{mineDetailVM.info.unitName}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">职位：</div>
+        <div class="value">{{mineDetailVM.info.positionName}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">级别：</div>
+        <div class="value">{{mineDetailVM.info.level}}</div>
+      </div>
+    </div>
+    <div class="info-wrapper">
+      <div class="info-item">
+        <div class="key key-img-wrapper">
+          <img class="key-img" src="build/assets/img/mine/mine-detail/mail-s@3x.png">
+          <div class="key-img-text">邮箱</div>
+        </div>
+        <div class="value">{{mineDetailVM.info.email}}</div>
+      </div>
+      <div class="info-contact-wrapper">
+        <div class="contact-line">
+          <div class="contact-item">
+            <img src="build/assets/img/mine/mine-detail/base-s@3x.png">
+            <div class="contact-detail">
+              <div class="key">base地</div>
+              <div class="value">{{mineDetailVM.info.empCode}}</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="build/assets/img/mine/mine-detail/wechat-s@3x.png">
+            <div class="contact-detail">
+              <div class="key">QQ/MSN/Skype</div>
+              <div class="value">{{mineDetailVM.info.empCode}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-line">
+          <div class="contact-item">
+            <img src="build/assets/img/mine/mine-detail/phone-3@3x.png">
+            <div class="contact-detail">
+              <div class="key">移动电话</div>
+              <div class="value">{{mineDetailVM.info.empCode}}</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="build/assets/img/mine/mine-detail/homephone-s@3x.png">
+            <div class="contact-detail">
+              <div class="key">固定电话</div>
+              <div class="value">{{mineDetailVM.info.empCode}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-wrapper">
+      <div class="info-item">
+        <div class="key">护照：</div>
+        <div class="value">{{mineDetailVM.info.passport}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">驾照：</div>
+        <div class="value">{{mineDetailVM.info.drivingLicense}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">医疗保险账号：</div>
+        <div class="value">{{mineDetailVM.info.medicalInsuranceAccount}}</div>
+      </div>
+      <div class="info-item">
+        <div class="key">公积金账号：</div>
+        <div class="value">{{mineDetailVM.info.providentFundAccount}}</div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
