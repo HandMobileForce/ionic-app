@@ -4,7 +4,7 @@
       <img class="logout-img" src="build/assets/img/mine/logout@3x.png">
       <div class="text">退出</div>
     </div>
-    <div class="my-info-wrapper">
+    <div class="my-info-wrapper" ng-click="go('mine-detail')">
       <div class="img-wrapper">
         <img class="avatar" ng-src="{{mineVM.detail.avatar}}">
         <img class="path" src="build/assets/img/Path-w@3x.png">
@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="fun-wrapper">
-      <div class="fun-wrapper-item">
+      <div class="fun-wrapper-item" ng-click="mineVM.clickHelp()">
         <img class="fun-left-img" src="build/assets/img/mine/help.png">
         <div>帮助</div>
         <div class="rest"></div>

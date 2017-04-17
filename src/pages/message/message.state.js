@@ -7,8 +7,8 @@
   /** @ngInject */
   function routerConfig($stateProvider) {
     $stateProvider
-      .state('messageList', {
-        url: '/messageList',
+      .state('message-list', {
+        url: '/message-list',
         params: {messageType: null, messageGroupName: null},
         templateUrl: 'build/pages/message/message-list/message-list.html',
         controller: 'messageListCtrl',

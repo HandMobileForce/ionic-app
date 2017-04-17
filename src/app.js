@@ -8,6 +8,7 @@
     'ionic',
     'ngCordova',
     'baseConfig',
+    'commonModule',
     'loginModule',
     'messageModule',
     'contactModule',

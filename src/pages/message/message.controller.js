@@ -48,12 +48,12 @@
           messageGroupCode: item.messageGroupCode
         }).then(function (result) {
           hmsPopup.hideLoading();
-          $state.go('messageList', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});
+          $state.go('message-list', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});
         }, function (result) {
           hmsPopup.showShortCenterToast('请求执行失败!');
         });
       } else {
-        $state.go('messageList', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});
+        $state.go('message-list', {messageType: item.messageGroupCode, messageGroupName: item.messageGroupName});
       }
     }
   }

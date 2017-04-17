@@ -41,6 +41,11 @@
         hmsPopup.showShortCenterToast('请求执行失败!');
       });
     }
+
+    //点击帮助
+    mineVM.clickHelp = function () {
+      window.open("http://g.eqxiu.com/s/sRGxXCQn", '_system', 'location=yes');
+    };
   }
 })();
 
