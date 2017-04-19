@@ -13,6 +13,12 @@
         templateUrl: 'build/pages/application/type-list/type-list.html',
         controller: 'typeListCtrl',
         controllerAs: 'typeListVM'
+      })
+      .state('manage', {
+        url: '/manage',
+        templateUrl: 'build/pages/application/manage/manage.html',
+        controller: 'manageCtrl',
+        controllerAs: 'manageVM'
       });
   }
 })();

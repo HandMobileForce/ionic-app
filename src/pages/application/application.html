@@ -24,10 +24,10 @@
       <div class="menu-item">
         <div class="menu-header-wrapper">
           <img src="build/assets/img/application/line@3x.png">
-          <div>常用应用</div>
+          <div>{{applicationVM.commonsApplication.cateoryName}}</div>
         </div>
         <div class="menu-content-wrapper">
-          <div class="menu-content-Item" ng-repeat="item in applicationVM.commonsMenus">
+          <div class="menu-content-Item" ng-repeat="item in applicationVM.commonsApplication.menus">
             <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon">
             <div class="menu-text">{{item.menuName}}</div>
           </div>

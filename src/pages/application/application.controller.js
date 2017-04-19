@@ -42,15 +42,17 @@
     //处理获取到的数据
     function handleData(data) {
       //获取前11个数据，填充加号，并填充空格
-      applicationVM.commonsMenus = data.menuCateories.commonsApplication[0].menus.slice(0, 11);
-      applicationVM.commonsMenus.push({
+      applicationVM.commonsApplication = angular.copy(data.menuCateories.commonsApplication[0]);
+      var commonsMenus = applicationVM.commonsApplication.menus.slice(0, 11);
+      commonsMenus.push({
         menuIcon: 'build/assets/img/application/all@3x.png'
       });
-      while (applicationVM.commonsMenus.length % 4 !== 0) {
-        applicationVM.commonsMenus.push({});
+      while (commonsMenus.length % 4 !== 0) {
+        commonsMenus.push({});
       }
       //填充全部
-      applicationVM.categroyMenus = data.menuCateories.categoryMenus;
+      applicationVM.commonsApplication.menus = commonsMenus;
+      applicationVM.categroyMenus = angular.copy(data.menuCateories.categoryMenus);
       applicationVM.categroyMenus.push({
         categoryIcon: 'build/assets/img/application/entire@3x.png',
         cateoryName: '全部'
@@ -61,6 +63,8 @@
     function goList(item) {
       if (item.cateoryName != '全部') {
         $state.go('type-list', {type: item.cateoryName});
+      } else {
+        $state.go('manage');
       }
     }
   }

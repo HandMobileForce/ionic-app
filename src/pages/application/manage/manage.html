@@ -3,9 +3,45 @@
     <div class="buttons" ng-click="goBack();">
       <img class="back-img" src="build/assets/img/go-back@3x.png"/>
     </div>
-    <div class="title">应用管理</div>
+    <div class="input-wrapper">
+      <input type="text" placeholder="搜索"/>
+      <img class="search-img" src="build/assets/img/message/search@3x.png"/>
+    </div>
+    <div class="buttons" ng-click="manageVM.manageMenu()">
+      <div class="manage-btn">{{manageVM.isModify?'保存':'管理'}}</div>
+    </div>
   </ion-header-bar>
   <ion-content>
-
+    <div class="app-wrapper">
+      <div class="app-header">
+        <div class="line"></div>
+        <div class="name">{{manageVM.commonsApplication.cateoryName}}</div>
+      </div>
+      <div class="app-content">
+        <div class="app-item" ng-class="{'modify': manageVM.isModify}"
+             ng-repeat="item in manageVM.commonsApplication.menus" ng-click="manageVM.deleteMenu(item)">
+          <img class="app-icon" ng-src="{{item.menuIcon}}">
+          <div class="app-text">{{item.menuName}}</div>
+          <img ng-show="manageVM.isModify" class="modify-icon" src="build/assets/img/application/manage/delete@3x.png">
+        </div>
+      </div>
+    </div>
+    <div class="app-wrapper" ng-repeat="categroyMenu in manageVM.categroyMenus">
+      <div class="app-header">
+        <div class="line"></div>
+        <div class="name">{{categroyMenu.cateoryName}}</div>
+      </div>
+      <div class="app-content">
+        <div class="app-item" ng-class="{'modify': manageVM.isModify}"
+             ng-repeat="item in categroyMenu.menus" ng-click="manageVM.addTo(item)">
+          <img class="app-icon" ng-src="{{item.menuIcon}}">
+          <div class="app-text">{{item.menuName}}</div>
+          <img ng-show="item.isShow!='Y' && manageVM.isModify" class="modify-icon"
+               src="build/assets/img/application/manage/add@3x.png">
+          <img ng-show="item.isShow=='Y' && manageVM.isModify" class="modify-icon"
+               src="build/assets/img/application/manage/remember-b@3x.png">
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
