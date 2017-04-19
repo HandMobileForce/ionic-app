@@ -2,7 +2,7 @@
   angular.module('messageModule')
     .controller('messageListCtrl', messageListCtrl);
   /** @ngInject */
-  function messageListCtrl($scope, hmsPopup, hmsHttp, baseConfig, $stateParams, $ionicHistory) {
+  function messageListCtrl($scope, hmsPopup, hmsHttp, baseConfig, $stateParams) {
     var messageListVM = this;
     var page = 1;
     var pageSize = baseConfig.pageSize;
@@ -13,7 +13,6 @@
     messageListVM.doRefresh = doRefresh;
     messageListVM.loadMore = loadMore;
     messageListVM.goRedirect = goRedirect;
-    messageListVM.goBack = goBack;
     hmsPopup.showLoading('请求中...');
     getMessageList();
 
@@ -61,11 +60,6 @@
     function loadMore() {
       page++;
       getMessageList('loadMore');
-    }
-
-    //页面回退
-    function goBack() {
-      $ionicHistory.goBack();
     }
   }
 })();

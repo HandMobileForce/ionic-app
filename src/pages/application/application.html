@@ -1,26 +1,35 @@
 <ion-view ng-controller="applicationCtrl as applicationVM" class="application">
-  <ion-header-bar align-title="center" class="bar-stable">
-    <div class="input-wrapper">
-      <input type="text" placeholder="搜索"/>
-      <img src="build/assets/img/application/search@3x.png"/>
+  <ion-header-bar align-title="center" class="bar-stable header-title">
+    <div class="buttons">
+      <img class="scan" src="build/assets/img/application/scan@3x.png"/>
+    </div>
+    <div class="title">应用</div>
+    <div class="buttons">
+      <img class="search-img" src="build/assets/img/application/search@3x.png"/>
     </div>
   </ion-header-bar>
   <ion-content>
+    <div class="head-wrapper">
+      <div class="img-div">
+        <img class="head-img" src="build/assets/img/application/banner@3x.png">
+      </div>
+      <div class="heads">
+        <div class="head-item" ng-repeat="item in applicationVM.categroyMenus" ng-click="applicationVM.goList(item)">
+          <img ng-src="{{item.categoryIcon}}">
+          <div>{{item.cateoryName}}</div>
+        </div>
+      </div>
+    </div>
     <div class="menu-list">
-      <div class="menu-item" ng-repeat="cateory in applicationVM.menuList.menuCateories">
+      <div class="menu-item">
         <div class="menu-header-wrapper">
           <img src="build/assets/img/application/line@3x.png">
-          <div>{{cateory.cateoryName}}</div>
-          <div class="setting" ng-if="$index == 1">
-            <div></div>
-            <div>应用设置</div>
-            <img src="build/assets/img/Path-b@3x.png">
-          </div>
+          <div>常用应用</div>
         </div>
         <div class="menu-content-wrapper">
-          <div class="menu-content-Item" ng-repeat="item in cateory.menus" ng-click="applicationVM.goPage(item)">
-            <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon"/>
-            <div class="app-text">{{item.menuName}}</div>
+          <div class="menu-content-Item" ng-repeat="item in applicationVM.commonsMenus">
+            <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon">
+            <div class="menu-text">{{item.menuName}}</div>
           </div>
         </div>
       </div>

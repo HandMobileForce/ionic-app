@@ -1,0 +1,16 @@
+<ion-view class="type-list">
+  <ion-header-bar align-title="center" class="bar-stable header-title">
+    <div class="buttons" ng-click="goBack();">
+      <img class="back-img" src="build/assets/img/go-back@3x.png"/>
+    </div>
+    <div class="title">{{typeListVM.type}}</div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="type-wrapper">
+      <div class="type-item" ng-repeat="item in typeListVM.menus">
+        <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon"/>
+        <div class="type-text">{{item.menuName}}</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
