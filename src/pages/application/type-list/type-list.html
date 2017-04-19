@@ -8,8 +8,9 @@
   <ion-content>
     <div class="type-wrapper">
       <div class="type-item" ng-repeat="item in typeListVM.menus">
-        <img ng-src="{{item.menuIcon}}" ng-if="item.menuIcon"/>
+        <img class="type-icon" ng-src="{{item.menuIcon}}" ng-if="item.menuIcon"/>
         <div class="type-text">{{item.menuName}}</div>
+        <img class="path" src="build/assets/img/Path-b@3x.png">
       </div>
     </div>
   </ion-content>

@@ -1,29 +1,32 @@
 .type-list {
   background: #fafafa;
   .type-wrapper {
+    padding-left: 3.05rem;
+    background: #fff;
     .type-item {
-      float: left;
+      height: 3.3rem;
       display: flex;
-      width: 25%;
-      height: 4.5rem;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-right: 0.05rem #EAEAEA solid;
       border-bottom: 0.05rem #EAEAEA solid;
-      img {
-        width: 2rem;
-        height: 2rem;
+      .type-icon {
+        margin: 0 0.5rem 0 -2.3rem;
+        vertical-align: top;
+        width: 1.8rem;
+        height: 1.8rem;
       }
       .type-text {
-        padding: 0 0.3rem;
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-size: 0.6rem;
-        color: black;
+        flex: 1;
+        font-size: 0.8rem;
+        color: #000000;
+      }
+      .path {
+        margin-right: 0.75rem;
+        vertical-align: top;
+        width: 0.3rem;
+        height: 0.5rem;
+      }
+      &:last-child {
+        border-bottom: none;
       }
     }
   }

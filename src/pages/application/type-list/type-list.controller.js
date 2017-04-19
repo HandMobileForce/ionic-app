@@ -1,5 +1,5 @@
 (function () {
-  angular.module('messageModule')
+  angular.module('applicationModule')
     .controller('typeListCtrl', typeListCtrl);
   /** @ngInject */
   function typeListCtrl(cacheService, $stateParams) {

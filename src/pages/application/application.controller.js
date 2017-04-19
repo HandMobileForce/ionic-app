@@ -34,14 +34,6 @@
         "appEquipment": ionic.Platform.isIOS() ? 'iOS' : 'Android'
       }).then(function (response) {
         hmsPopup.hideLoadingDelay();
-        // //填充空对象
-        // for (var key in response.menuCateories) {
-        //   response.menuCateories[key].map(function (item) {
-        //     while (item.menus.length % 4 !== 0) {
-        //       item.menus.push({});
-        //     }
-        //   });
-        // }
         handleData(response);
         cacheService.set('menuList', response);
       });
@@ -49,10 +41,15 @@
 
     //处理获取到的数据
     function handleData(data) {
+      //获取前11个数据，填充加号，并填充空格
       applicationVM.commonsMenus = data.menuCateories.commonsApplication[0].menus.slice(0, 11);
       applicationVM.commonsMenus.push({
         menuIcon: 'build/assets/img/application/all@3x.png'
       });
+      while (applicationVM.commonsMenus.length % 4 !== 0) {
+        applicationVM.commonsMenus.push({});
+      }
+      //填充全部
       applicationVM.categroyMenus = data.menuCateories.categoryMenus;
       applicationVM.categroyMenus.push({
         categoryIcon: 'build/assets/img/application/entire@3x.png',
