@@ -11,7 +11,7 @@
       <div class="manage-btn">{{manageVM.isModify?'保存':'管理'}}</div>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content has-bouncing="false">
     <div class="app-wrapper">
       <div class="app-header">
         <div class="line"></div>
@@ -20,7 +20,8 @@
       <div class="app-content">
         <div class="app-item" ng-class="{'modify': manageVM.isModify}" ng-click="manageVM.deleteMenu(item)"
              ng-repeat="item in manageVM.commonsApplication.menus" ng-drop="true"
-             ng-drop-success="manageVM.dropComplete($index,$data)" ng-drag="manageVM.isModify" ng-drag-data="item">
+             ng-drop-success="manageVM.dropComplete($index,$data)" ng-drag="manageVM.isModify" ng-drag-data="item"
+             allowTransform="false">
           <img class="app-icon" ng-src="{{item.menuIcon}}">
           <div class="app-text">{{item.menuName}}</div>
           <img ng-show="manageVM.isModify" class="modify-icon"
