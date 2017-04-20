@@ -69,7 +69,8 @@ var libPublishFilePath = [
   'src/lib/**/angular-translate.js',
   'src/lib/**/angular-translate-loader-static-files.js',
   'src/lib/**/dist/ionic-datepicker.bundle.min.js',
-  'src/lib/**/dist/pouchdb.min.js'
+  'src/lib/**/dist/pouchdb.min.js',
+  'src/lib/**/ngDraggable.js'
 ];
 
 var imgFilePath = [

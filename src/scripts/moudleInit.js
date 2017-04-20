@@ -9,7 +9,7 @@
   angular.module('loginModule', []);
   angular.module('messageModule', []);
   angular.module('contactModule', []);
-  angular.module('applicationModule', []);
+  angular.module('applicationModule', ['ngDraggable']);
   angular.module('mineModule', []);
   angular.module('utilsModule', []);
 })();

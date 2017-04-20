@@ -8,6 +8,7 @@
     manageVM.manageMenu = manageMenu;
     manageVM.addTo = addTo;
     manageVM.deleteMenu = deleteMenu;
+    manageVM.dropComplete = dropComplete;
 
     handleData(cacheService.get('menuList'));
 
@@ -57,6 +58,37 @@
       });
       hmsHttp.post(baseConfig.interfacePath + 'insertOrDelOrSort', {
         menus: menus
+      }).then(function () {
+        hmsHttp.post(baseConfig.interfacePath + 'appUpdateSce', {
+          "appEquipment": ionic.Platform.isIOS() ? 'iOS' : 'Android'
+        }).then(function (response) {
+          handleData(response);
+          cacheService.set('menuList', response);
+        });
+      });
+    }
+
+    //常用应用拖拽更新顺序
+    function dropComplete(index, obj) {
+      //找到拖动元素的索引，删除他，并在释放地方的索引上添加上这个元素
+      var menus = angular.copy(manageVM.commonsApplication.menus);
+      var idx = -1;
+      for (var i = 0, len = menus.length; i < len; i++) {
+        if (menus[i].menuId == obj.menuId) {
+          idx = i;
+          break;
+        }
+
+      }
+      if (idx == -1) {
+        return;
+      }
+      menus.splice(idx, 1);
+      menus.splice(index, 0, obj);
+      hmsHttp.post(baseConfig.interfacePath + 'insertOrDelOrSort', {
+        menus: menus.map(function (item) {
+          return item.menuId
+        })
       }).then(function () {
         hmsHttp.post(baseConfig.interfacePath + 'appUpdateSce', {
           "appEquipment": ionic.Platform.isIOS() ? 'iOS' : 'Android'

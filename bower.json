@@ -10,7 +10,8 @@
     "ionic": "",
     "ngCordova": "",
     "jquery": "",
-    "handLib": ""
+    "handLib": "",
+    "ngDraggable": "^0.1.11"
   },
   "devDependencies": {}
 }

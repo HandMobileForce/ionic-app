@@ -18,11 +18,13 @@
         <div class="name">{{manageVM.commonsApplication.cateoryName}}</div>
       </div>
       <div class="app-content">
-        <div class="app-item" ng-class="{'modify': manageVM.isModify}"
-             ng-repeat="item in manageVM.commonsApplication.menus" ng-click="manageVM.deleteMenu(item)">
+        <div class="app-item" ng-class="{'modify': manageVM.isModify}" ng-click="manageVM.deleteMenu(item)"
+             ng-repeat="item in manageVM.commonsApplication.menus" ng-drop="true"
+             ng-drop-success="manageVM.dropComplete($index,$data)" ng-drag="manageVM.isModify" ng-drag-data="item">
           <img class="app-icon" ng-src="{{item.menuIcon}}">
           <div class="app-text">{{item.menuName}}</div>
-          <img ng-show="manageVM.isModify" class="modify-icon" src="build/assets/img/application/manage/delete@3x.png">
+          <img ng-show="manageVM.isModify" class="modify-icon"
+               src="build/assets/img/application/manage/delete@3x.png">
         </div>
       </div>
     </div>
